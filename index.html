@@ -3,169 +3,135 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Spotorama — Support</title>
-<style>
-  :root {
-    --bg: #faf0d7;
-    --panel: #fffaf0;
-    --ink: #2e2417;
-    --muted: #6b5b45;
-    --rule: #e3d4b4;
-    --accent: #e2521d;
-  }
-  @media (prefers-color-scheme: dark) {
-    :root {
-      --bg: #14181f;
-      --panel: #1b212b;
-      --ink: #e8e4dc;
-      --muted: #a49a8a;
-      --rule: #2c3542;
-      --accent: #f0a04b;
-    }
-  }
-  * { box-sizing: border-box; }
-  body {
-    margin: 0;
-    padding: 2.5rem 1.25rem 5rem;
-    background: var(--bg);
-    color: var(--ink);
-    font: 16px/1.65 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-  }
-  main {
-    max-width: 40rem;
-    margin: 0 auto;
-    background: var(--panel);
-    border: 1px solid var(--rule);
-    border-radius: 14px;
-    padding: 2.25rem 2rem;
-  }
-  h1 { font-size: 1.75rem; margin: 0 0 .5rem; letter-spacing: -.01em; }
-  h2 {
-    font-size: 1.05rem;
-    margin: 2.25rem 0 .5rem;
-    padding-top: 1.25rem;
-    border-top: 1px solid var(--rule);
-  }
-  h2:first-of-type { border-top: 0; padding-top: 0; }
-  h3 { font-size: .975rem; margin: 1.5rem 0 .35rem; }
-  .lede {
-    font-size: 1.0625rem;
-    color: var(--muted);
-    margin: 0 0 2rem;
-  }
-  ul { padding-left: 1.15rem; }
-  li { margin: .35rem 0; }
-  a { color: var(--accent); }
-  .contact {
-    margin-top: 2.5rem;
-    padding: 1.25rem 1.35rem;
-    background: var(--bg);
-    border-radius: 10px;
-  }
-  .contact p { margin: .35rem 0; }
-  footer {
-    max-width: 40rem;
-    margin: 1.5rem auto 0;
-    color: var(--muted);
-    font-size: .8125rem;
-    text-align: center;
-  }
-</style>
+<title>Spotorama — the car game that keeps score</title>
+<meta name="description" content="Spotorama is an in-car spotting game for up to seven players on one phone. Somebody calls it, the app awards the point, and nobody argues about the score.">
+<meta property="og:title" content="Spotorama — the car game that keeps score">
+<meta property="og:description" content="Somebody calls it, the app awards the point, and nobody argues about the score.">
+<meta property="og:type" content="website">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="site.css">
 </head>
 <body>
-<main>
-  <h1>Spotorama — Support</h1>
-  <p class="lede">
-    The in-car spotting game. Somebody calls it, the app awards the point, and nobody has to
-    keep score in their head.
-  </p>
 
-  <h2>Getting started</h2>
-  <ul>
-    <li><strong>Add everyone first.</strong> Players tab → <strong>+</strong>. Each person
-      gets a colour and a shape; the shape is how you find yourself on the scoreboard, and it
-      stays yours in every theme.</li>
-    <li><strong>Start a trip.</strong> Play → Start a Trip → pick a list, tick who is
-      playing, and go.</li>
-    <li><strong>Score a spot.</strong> Tap what you spotted, then tap who spotted it. With
-      one player it is a single tap.</li>
-  </ul>
+<nav class="nav">
+  <a class="brand" href="index.html">Spotorama</a>
+  <a href="how-to-play.html">How to play</a>
+  <a href="whats-next.html">What's next</a>
+  <a href="support.html">Support</a>
+</nav>
 
-  <h2>Common questions</h2>
+<div class="wrap">
 
-  <h3>Voice is not picking up my calls</h3>
-  <p>
-    Check that listening is on — the waveform button at the top left of the game screen.
-    The first time you use voice, iOS needs to download a speech model, which needs a
-    connection; after that it works offline. Tapping always works, with or without voice.
-  </p>
+  <header class="hero">
+    <div class="shapes" aria-hidden="true">
+      <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="11" fill="var(--p0)" stroke="var(--ink)" stroke-width="2"/></svg>
+      <svg viewBox="0 0 24 24"><path d="M12 1.5 23 22.5H1Z" fill="var(--p1)" stroke="var(--ink)" stroke-width="2" stroke-linejoin="round"/></svg>
+      <svg viewBox="0 0 24 24"><rect x="1.5" y="1.5" width="21" height="21" rx="4" fill="var(--p2)" stroke="var(--ink)" stroke-width="2"/></svg>
+      <svg viewBox="0 0 24 24"><path d="M12 1 23 12 12 23 1 12Z" fill="var(--p3)" stroke="var(--ink)" stroke-width="2" stroke-linejoin="round"/></svg>
+      <svg viewBox="0 0 24 24"><path d="M12 1.5l3.2 6.9 7.3.9-5.4 5.1 1.4 7.3-6.5-3.7-6.5 3.7 1.4-7.3L1.5 9.3l7.3-.9Z" fill="var(--p4)" stroke="var(--ink)" stroke-width="2" stroke-linejoin="round"/></svg>
+      <svg viewBox="0 0 24 24"><path d="M8.5 1.5h7v7h7v7h-7v7h-7v-7h-7v-7h7Z" fill="var(--p5)" stroke="var(--ink)" stroke-width="2" stroke-linejoin="round"/></svg>
+      <svg viewBox="0 0 24 24"><path d="M12 22S1.5 14.8 1.5 8.2A5.2 5.2 0 0 1 12 6a5.2 5.2 0 0 1 10.5 2.2C22.5 14.8 12 22 12 22Z" fill="var(--p6)" stroke="var(--ink)" stroke-width="2" stroke-linejoin="round"/></svg>
+    </div>
 
-  <h3>Turning on listening stopped my music</h3>
-  <p>
-    Spotorama will not start listening while something else is playing — it refuses instead,
-    so your music is left alone. If the music was already stopped when you pressed Listen, it
-    will not restart on its own; start it again from wherever it was playing.
-  </p>
+    <div class="call">“Spotto!”</div>
+    <h1>The car game that keeps score</h1>
+    <p class="lede">
+      Somebody spots a yellow car and calls it. Spotorama awards the point, remembers who is
+      winning, and settles the argument before it starts.
+    </p>
 
-  <h3>The app stopped listening in the middle of a trip</h3>
-  <p>
-    That is deliberate. If music or a podcast starts while Spotorama is listening, it hands
-    the audio back rather than fighting for it, and tells you it has stopped. Tap the
-    waveform button again once the other audio has finished.
-  </p>
+    <!-- Swap for the live link once 1.0 is approved:
+         https://apps.apple.com/au/app/spotorama/id6799803992 -->
+    <span class="btn pending">Coming soon to the App&nbsp;Store</span>
+  </header>
 
-  <h3>Sound goes mono in the car when listening is on</h3>
-  <p>
-    On CarPlay this is unavoidable. A car switches to its hands-free channel the moment
-    anything asks it for a microphone, and that channel is mono voice-band by design. Turn
-    listening off and the car goes back to stereo.
-  </p>
-
-  <h3>Somebody got a point they should not have</h3>
-  <p>
-    Press and hold the spot card and choose <strong>Take one back</strong>, then pick who it
-    should come off. To see everything that has been scored this trip, tap the list button at
-    the top right of the game screen — that is <strong>Fix a point</strong>.
-  </p>
-
-  <h3>Can I change what things are worth, or make my own list?</h3>
-  <p>
-    Yes — all of it. The Lists tab lets you edit any built-in list, change what each spot is
-    worth, add your own, or start a list from nothing. You can also choose how a trip ends:
-    when you stop, at a target score, when the list is finished, or after a set time.
-  </p>
-
-  <h3>Can we play across two phones?</h3>
-  <p>
-    Not at the moment. Spotorama is a one-phone game for up to seven players.
-  </p>
-
-  <h3>Where is my data kept?</h3>
-  <p>
-    On your device, and nowhere else. There is no account and no server. See the
-    <a href="privacy.html">privacy policy</a>.
-  </p>
-
-  <h3>I deleted the app and lost my trips</h3>
-  <p>
-    Everything lives on the device, so deleting the app removes it. If you had device backups
-    turned on, restoring from a backup restores it with everything else.
-  </p>
-
-  <div class="contact">
-    <h2 style="margin-top:0;padding-top:0;border-top:0;">Still stuck?</h2>
+  <section class="panel">
+    <h2>Where this came from</h2>
     <p>
-      Email <a href="mailto:spotorama.app@gmail.com">spotorama.app@gmail.com</a>.
+      Spotto is one of those games nobody is taught and everybody knows. You are in the back
+      of a car, somebody shouts <strong>“Spotto!”</strong> at a yellow car, and that is the
+      whole rulebook. It has been played on Australian roads for generations, and every
+      family plays it slightly wrong in their own particular way.
     </p>
     <p>
-      It helps to say what iPhone you have, what iOS version, and what you were doing when it
-      went wrong. If it is a voice problem, whether you were on CarPlay, Bluetooth or neither
-      is the single most useful thing you can tell me.
+      The trouble has always been the scoring. Somebody calls a yellow car and somebody else
+      says they called it first. Somebody claims a ute that was more mustard than yellow.
+      By the third hour nobody can remember whether it was 14–11 or 11–14, and the person
+      who was winning is very sure it was the former.
     </p>
+    <p>
+      Spotorama is the referee. Everyone gets a colour and a shape, you call what you spot,
+      and the phone keeps the score properly — including the things families argue about
+      most, like what a spot is worth and what actually counts as winning.
+    </p>
+    <div class="callout">
+      <p class="muted">
+        <strong>Draft.</strong> This section should be your version, not a general one —
+        the actual trip, the actual argument, the person who always cheats. That is the part
+        no other app can copy.
+      </p>
+    </div>
+  </section>
+
+  <h2>What it does</h2>
+  <div class="grid">
+    <div class="cell">
+      <h3>Up to seven players</h3>
+      <p>One phone, everyone in the car. Each player gets a colour and a shape, and the shape
+         stays theirs everywhere so you can find yourself at a glance.</p>
+    </div>
+    <div class="cell">
+      <h3>Call it or tap it</h3>
+      <p>Say “Spotto!” and the app hears it, or tap the card. Voice is optional and every
+         spoken action can be tapped instead.</p>
+    </div>
+    <div class="cell">
+      <h3>Your rules, not ours</h3>
+      <p>Edit any list, change what a spot is worth, invent your own, and choose how a game
+         ends — on time, on points, or when somebody finishes the list.</p>
+    </div>
+    <div class="cell">
+      <h3>Teams</h3>
+      <p>Kids against grown-ups, front seat against back. The app can suggest a fair split,
+         or you can pick.</p>
+    </div>
+    <div class="cell">
+      <h3>Works with no signal</h3>
+      <p>Built for the middle of nowhere. No account, no server, nothing to sign in to —
+         everything stays on your phone.</p>
+    </div>
+    <div class="cell">
+      <h3>Every trip remembered</h3>
+      <p>Past trips are kept with the full scoreboard, so you can settle who actually won
+         the drive to the coast in April.</p>
+    </div>
   </div>
-</main>
+
+  <section class="panel" style="margin-top:1.75rem;">
+    <h2>Four lists to start with</h2>
+    <p class="muted">Twenty-four spots across four road trips. Change any of them, or start from nothing.</p>
+    <div class="spots">
+      <div class="spot"><span>Classic Road Trip</span><span class="pts">6 spots</span></div>
+      <div class="spot"><span>Paddock Patrol</span><span class="pts">6 spots</span></div>
+      <div class="spot"><span>Big Rigs</span><span class="pts">6 spots</span></div>
+      <div class="spot"><span>Around Town</span><span class="pts">6 spots</span></div>
+    </div>
+    <p style="margin-top:1.25rem;">
+      <a href="how-to-play.html">See how a game works →</a>
+    </p>
+  </section>
+
+</div>
+
 <footer>
-  Spotorama is developed by Justin Schaapveld. &middot; <a href="privacy.html">Privacy policy</a>
+  Spotorama is made by Justin Schaapveld in Australia.<br>
+  <a href="how-to-play.html">How to play</a> ·
+  <a href="whats-next.html">What's next</a> ·
+  <a href="support.html">Support</a> ·
+  <a href="privacy.html">Privacy</a>
 </footer>
+
 </body>
 </html>

@@ -1,0 +1,279 @@
+/* Spotorama — shared site styles.
+   Colours, borders, radii and the hard block shadow are taken from the app's Cartoon theme
+   (Spotorama/Spotorama/Design/Themes.swift) so the site and the app look like one thing.
+   The shadow has no blur on purpose — that is the whole look. Don't soften it. */
+
+:root {
+  --bg:      #faf0d7;
+  --panel:   #fffaf0;
+  --ink:     #2e2417;
+  --muted:   #6b5b45;
+  --rule:    #e3d4b4;
+  --accent:  #e2521d;
+  --shadow:  #1a1410;
+
+  /* The seven player slots, in order. Same colours the app gives players 1–7. */
+  --p0: #ffb300; --p1: #0099cc; --p2: #e62b7b; --p3: #5b4be0;
+  --p4: #1e9e5a; --p5: #d93a2b; --p6: #7a4b2a;
+
+  --r-sm: 10px; --r-md: 18px; --r-lg: 28px;
+  --border: 3px;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg:     #14181f;
+    --panel:  #1b212b;
+    --ink:    #e8e4dc;
+    --muted:  #a49a8a;
+    --rule:   #2c3542;
+    --accent: #f0a04b;
+    --shadow: #05070a;
+    --p0: #ffc24d; --p1: #56c7f0; --p2: #ff6fa8; --p3: #9a8cff;
+    --p4: #7fe0b0; --p5: #ff8a6b; --p6: #b7cc48;
+  }
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  padding: 0 1.25rem 5rem;
+  background: var(--bg);
+  color: var(--ink);
+  font: 17px/1.65 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+}
+
+h1, h2, h3, .display {
+  font-family: "Baloo 2", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  font-weight: 700;
+  line-height: 1.15;
+  letter-spacing: -0.01em;
+}
+
+a { color: var(--accent); text-decoration-thickness: 2px; text-underline-offset: 2px; }
+a:hover { text-decoration-thickness: 3px; }
+
+/* ---- Layout ---- */
+.wrap { max-width: 46rem; margin: 0 auto; }
+
+/* ---- Site nav ---- */
+.nav {
+  max-width: 46rem;
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.35rem 1.1rem;
+  padding: 1.5rem 0 0.5rem;
+}
+.nav .brand {
+  font-family: "Baloo 2", sans-serif;
+  font-weight: 800;
+  font-size: 1.2rem;
+  color: var(--ink);
+  text-decoration: none;
+  margin-right: auto;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+.nav a:not(.brand) {
+  color: var(--muted);
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.95rem;
+  padding: 0.3rem 0;
+  border-bottom: 2px solid transparent;
+}
+.nav a:not(.brand):hover { color: var(--ink); border-bottom-color: var(--accent); }
+.nav a[aria-current="page"] { color: var(--ink); border-bottom-color: var(--accent); }
+
+/* ---- Cards and panels ---- */
+.panel {
+  background: var(--panel);
+  border: var(--border) solid var(--ink);
+  border-radius: var(--r-lg);
+  box-shadow: 0 5px 0 var(--shadow);
+  padding: 2rem 1.75rem;
+  margin: 0 0 1.75rem;
+}
+
+/* ---- Hero ---- */
+.hero { padding: 2.5rem 0 1rem; text-align: center; }
+.hero h1 {
+  font-size: clamp(2.6rem, 9vw, 4.2rem);
+  margin: 0 0 0.4rem;
+}
+.hero .call {
+  display: inline-block;
+  background: var(--p0);
+  color: #1a1410;
+  border: var(--border) solid var(--ink);
+  border-radius: var(--r-md);
+  box-shadow: 0 5px 0 var(--shadow);
+  padding: 0.35rem 1rem;
+  font-family: "Baloo 2", sans-serif;
+  font-weight: 800;
+  font-size: 1.1rem;
+  transform: rotate(-2deg);
+  margin-bottom: 1.25rem;
+}
+.hero .lede {
+  font-size: 1.2rem;
+  color: var(--muted);
+  max-width: 32rem;
+  margin: 0 auto 1.75rem;
+}
+
+/* ---- Buttons ---- */
+.btn {
+  display: inline-block;
+  background: var(--accent);
+  color: #fffaf0;
+  border: var(--border) solid var(--ink);
+  border-radius: var(--r-md);
+  box-shadow: 0 5px 0 var(--shadow);
+  padding: 0.7rem 1.5rem;
+  font-family: "Baloo 2", sans-serif;
+  font-weight: 700;
+  font-size: 1.05rem;
+  text-decoration: none;
+  transition: transform 0.08s, box-shadow 0.08s;
+}
+.btn:hover { transform: translateY(2px); box-shadow: 0 3px 0 var(--shadow); }
+.btn:active { transform: translateY(5px); box-shadow: 0 0 0 var(--shadow); }
+.btn.ghost { background: var(--panel); color: var(--ink); }
+.btn.pending {
+  background: var(--panel);
+  color: var(--muted);
+  border-style: dashed;
+  box-shadow: none;
+  cursor: default;
+}
+.btn.pending:hover { transform: none; box-shadow: none; }
+
+/* ---- The seven shapes, as a motif ---- */
+.shapes { display: flex; justify-content: center; gap: 0.6rem; margin: 0 0 1.5rem; }
+.shapes svg { width: 26px; height: 26px; display: block; }
+
+/* ---- Feature grid ---- */
+.grid { display: grid; gap: 1.1rem; grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr)); }
+.grid .cell {
+  background: var(--panel);
+  border: var(--border) solid var(--ink);
+  border-radius: var(--r-md);
+  box-shadow: 0 5px 0 var(--shadow);
+  padding: 1.25rem 1.25rem 1.4rem;
+}
+.grid .cell h3 { margin: 0.5rem 0 0.35rem; font-size: 1.15rem; }
+.grid .cell p { margin: 0; color: var(--muted); font-size: 0.97rem; }
+
+/* ---- Steps ---- */
+.steps { list-style: none; counter-reset: step; padding: 0; margin: 0; }
+.steps > li {
+  counter-increment: step;
+  position: relative;
+  padding-left: 3.25rem;
+  margin-bottom: 1.5rem;
+}
+.steps > li::before {
+  content: counter(step);
+  position: absolute;
+  left: 0; top: -0.1rem;
+  width: 2.25rem; height: 2.25rem;
+  display: grid; place-items: center;
+  background: var(--p0);
+  color: #1a1410;
+  border: var(--border) solid var(--ink);
+  border-radius: 50%;
+  font-family: "Baloo 2", sans-serif;
+  font-weight: 800;
+  font-size: 1.1rem;
+}
+.steps > li h3 { margin: 0 0 0.3rem; font-size: 1.15rem; }
+.steps > li p { margin: 0; color: var(--muted); }
+
+/* ---- Spot list table ---- */
+.spots { display: grid; gap: 0.5rem; grid-template-columns: repeat(auto-fit, minmax(13rem, 1fr)); margin: 1rem 0 0; }
+.spot {
+  display: flex; align-items: center; justify-content: space-between; gap: 0.75rem;
+  background: var(--bg);
+  border: 2px solid var(--rule);
+  border-radius: var(--r-sm);
+  padding: 0.5rem 0.8rem;
+  font-size: 0.95rem;
+}
+.spot .pts { font-family: "Baloo 2", sans-serif; font-weight: 800; color: var(--accent); }
+
+/* ---- Next-up items ---- */
+.next { border-left: var(--border) solid var(--rule); padding-left: 1.4rem; margin: 0; }
+.next > li { list-style: none; margin-bottom: 2rem; position: relative; }
+.next > li::before {
+  content: "";
+  position: absolute;
+  left: calc(-1.4rem - var(--border) - 7px);
+  top: 0.45rem;
+  width: 14px; height: 14px;
+  border-radius: 50%;
+  background: var(--accent);
+  border: var(--border) solid var(--bg);
+}
+.next h3 { margin: 0 0 0.35rem; font-size: 1.2rem; }
+.next p { margin: 0 0 0.5rem; color: var(--muted); }
+
+.tag {
+  display: inline-block;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  padding: 0.15rem 0.55rem;
+  border-radius: 999px;
+  border: 2px solid var(--rule);
+  color: var(--muted);
+  margin-bottom: 0.5rem;
+}
+.tag.planned { border-color: var(--accent); color: var(--accent); }
+
+/* ---- Misc ---- */
+.lede { font-size: 1.1rem; }
+.muted { color: var(--muted); }
+h2 { font-size: 1.6rem; margin: 2.25rem 0 0.75rem; }
+h2:first-child { margin-top: 0; }
+h3 { font-size: 1.15rem; margin: 1.75rem 0 0.4rem; }
+.panel > h2:first-child, .panel > h1:first-child { margin-top: 0; }
+
+.callout {
+  background: var(--bg);
+  border: 2px dashed var(--rule);
+  border-radius: var(--r-md);
+  padding: 1.1rem 1.25rem;
+  margin: 1.5rem 0 0;
+}
+.callout p:last-child { margin-bottom: 0; }
+.callout p:first-child { margin-top: 0; }
+
+footer {
+  max-width: 46rem;
+  margin: 3rem auto 0;
+  padding-top: 1.5rem;
+  border-top: 2px solid var(--rule);
+  color: var(--muted);
+  font-size: 0.9rem;
+  text-align: center;
+}
+
+@media (max-width: 34rem) {
+  .panel { padding: 1.5rem 1.15rem; }
+  body { padding: 0 0.9rem 4rem; }
+
+  /* Brand on its own line, the three links in one row beneath it — otherwise the
+     last link wraps alone and the row looks broken. */
+  .nav { gap: 0.5rem 1rem; padding-top: 1.15rem; }
+  .nav .brand { flex: 0 0 100%; margin-right: 0; margin-bottom: 0.15rem; }
+  .nav a:not(.brand) { font-size: 0.9rem; }
+
+  .hero { padding-top: 1.75rem; }
+  .hero .lede { font-size: 1.08rem; }
+}

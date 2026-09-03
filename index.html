@@ -1,0 +1,171 @@
+<!doctype html>
+<html lang="en-AU">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Spotorama — Support</title>
+<style>
+  :root {
+    --bg: #faf0d7;
+    --panel: #fffaf0;
+    --ink: #2e2417;
+    --muted: #6b5b45;
+    --rule: #e3d4b4;
+    --accent: #e2521d;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #14181f;
+      --panel: #1b212b;
+      --ink: #e8e4dc;
+      --muted: #a49a8a;
+      --rule: #2c3542;
+      --accent: #f0a04b;
+    }
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    padding: 2.5rem 1.25rem 5rem;
+    background: var(--bg);
+    color: var(--ink);
+    font: 16px/1.65 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  }
+  main {
+    max-width: 40rem;
+    margin: 0 auto;
+    background: var(--panel);
+    border: 1px solid var(--rule);
+    border-radius: 14px;
+    padding: 2.25rem 2rem;
+  }
+  h1 { font-size: 1.75rem; margin: 0 0 .5rem; letter-spacing: -.01em; }
+  h2 {
+    font-size: 1.05rem;
+    margin: 2.25rem 0 .5rem;
+    padding-top: 1.25rem;
+    border-top: 1px solid var(--rule);
+  }
+  h2:first-of-type { border-top: 0; padding-top: 0; }
+  h3 { font-size: .975rem; margin: 1.5rem 0 .35rem; }
+  .lede {
+    font-size: 1.0625rem;
+    color: var(--muted);
+    margin: 0 0 2rem;
+  }
+  ul { padding-left: 1.15rem; }
+  li { margin: .35rem 0; }
+  a { color: var(--accent); }
+  .contact {
+    margin-top: 2.5rem;
+    padding: 1.25rem 1.35rem;
+    background: var(--bg);
+    border-radius: 10px;
+  }
+  .contact p { margin: .35rem 0; }
+  footer {
+    max-width: 40rem;
+    margin: 1.5rem auto 0;
+    color: var(--muted);
+    font-size: .8125rem;
+    text-align: center;
+  }
+</style>
+</head>
+<body>
+<main>
+  <h1>Spotorama — Support</h1>
+  <p class="lede">
+    The in-car spotting game. Somebody calls it, the app awards the point, and nobody has to
+    keep score in their head.
+  </p>
+
+  <h2>Getting started</h2>
+  <ul>
+    <li><strong>Add everyone first.</strong> Players tab → <strong>+</strong>. Each person
+      gets a colour and a shape; the shape is how you find yourself on the scoreboard, and it
+      stays yours in every theme.</li>
+    <li><strong>Start a trip.</strong> Play → Start a Trip → pick a list, tick who is
+      playing, and go.</li>
+    <li><strong>Score a spot.</strong> Tap what you spotted, then tap who spotted it. With
+      one player it is a single tap.</li>
+  </ul>
+
+  <h2>Common questions</h2>
+
+  <h3>Voice is not picking up my calls</h3>
+  <p>
+    Check that listening is on — the waveform button at the top left of the game screen.
+    The first time you use voice, iOS needs to download a speech model, which needs a
+    connection; after that it works offline. Tapping always works, with or without voice.
+  </p>
+
+  <h3>Turning on listening stopped my music</h3>
+  <p>
+    Spotorama will not start listening while something else is playing — it refuses instead,
+    so your music is left alone. If the music was already stopped when you pressed Listen, it
+    will not restart on its own; start it again from wherever it was playing.
+  </p>
+
+  <h3>The app stopped listening in the middle of a trip</h3>
+  <p>
+    That is deliberate. If music or a podcast starts while Spotorama is listening, it hands
+    the audio back rather than fighting for it, and tells you it has stopped. Tap the
+    waveform button again once the other audio has finished.
+  </p>
+
+  <h3>Sound goes mono in the car when listening is on</h3>
+  <p>
+    On CarPlay this is unavoidable. A car switches to its hands-free channel the moment
+    anything asks it for a microphone, and that channel is mono voice-band by design. Turn
+    listening off and the car goes back to stereo.
+  </p>
+
+  <h3>Somebody got a point they should not have</h3>
+  <p>
+    Press and hold the spot card and choose <strong>Take one back</strong>, then pick who it
+    should come off. To see everything that has been scored this trip, tap the list button at
+    the top right of the game screen — that is <strong>Fix a point</strong>.
+  </p>
+
+  <h3>Can I change what things are worth, or make my own list?</h3>
+  <p>
+    Yes — all of it. The Lists tab lets you edit any built-in list, change what each spot is
+    worth, add your own, or start a list from nothing. You can also choose how a trip ends:
+    when you stop, at a target score, when the list is finished, or after a set time.
+  </p>
+
+  <h3>Can we play across two phones?</h3>
+  <p>
+    Not at the moment. Spotorama is a one-phone game for up to seven players.
+  </p>
+
+  <h3>Where is my data kept?</h3>
+  <p>
+    On your device, and nowhere else. There is no account and no server. See the
+    <a href="privacy.html">privacy policy</a>.
+  </p>
+
+  <h3>I deleted the app and lost my trips</h3>
+  <p>
+    Everything lives on the device, so deleting the app removes it. If you had device backups
+    turned on, restoring from a backup restores it with everything else.
+  </p>
+
+  <div class="contact">
+    <h2 style="margin-top:0;padding-top:0;border-top:0;">Still stuck?</h2>
+    <p>
+      Email <a href="mailto:spotorama.app@gmail.com">spotorama.app@gmail.com</a>.
+    </p>
+    <p>
+      It helps to say what iPhone you have, what iOS version, and what you were doing when it
+      went wrong. If it is a voice problem, whether you were on CarPlay, Bluetooth or neither
+      is the single most useful thing you can tell me.
+    </p>
+  </div>
+</main>
+<footer>
+  Spotorama is developed by Justin Schaapveld. &middot; <a href="privacy.html">Privacy policy</a>
+</footer>
+</body>
+</html>

@@ -277,3 +277,32 @@ footer {
   .hero { padding-top: 1.75rem; }
   .hero .lede { font-size: 1.08rem; }
 }
+
+/* ---- Product shots ----
+   Deliberately plain. These are structural slots so the page has real imagery
+   to lay out; the presentation is for the design pass, not settled here. */
+.shot { margin: 1.5rem 0 0; }
+.shot img {
+  display: block;
+  width: 100%;
+  max-width: 303px;
+  height: auto;
+  margin: 0 auto;
+  border: var(--border) solid var(--ink);
+  border-radius: var(--r-lg);
+  box-shadow: 0 5px 0 var(--shadow);
+  background: var(--panel);
+}
+.shot figcaption {
+  text-align: center;
+  color: var(--muted);
+  font-size: 0.9rem;
+  margin-top: 0.75rem;
+}
+.shots {
+  display: grid;
+  gap: 1.5rem;
+  grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
+  margin: 1.5rem 0 0;
+}
+.shots .shot { margin: 0; }

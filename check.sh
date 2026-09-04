@@ -47,7 +47,10 @@ PY
 [ $? -ne 0 ] && fail=1
 
 echo "3. Naming rule — \"Spotto\" only ever quoted"
-bare=$(grep -ho '.\{1\}Spotto[^r]' *.html 2>/dev/null | grep -v '[“"”]Spotto' | head -5)
+# Quoting counts whether it is a literal quote character or an HTML entity
+# (&ldquo; &rdquo; &quot; &#8220;). Entities are the normal case in generated markup.
+bare=$(grep -ho '.\{8\}Spotto[^r]' *.html 2>/dev/null \
+       | grep -viE '(&ldquo;|&quot;|&#8220;|&#x201c;|[“"”])spotto' | head -5)
 [ -z "$bare" ] && ok "no unquoted Spotto" || { bad "unquoted Spotto found:"; echo "$bare" | sed 's/^/      /'; }
 
 echo "4. Internal links and images resolve"

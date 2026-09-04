@@ -5,107 +5,101 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>What's next — Spotorama</title>
 <meta name="description" content="Where Spotorama is going: playing across several phones, records that carry between trips, and remembering where you spotted things.">
+<link rel="icon" href="img/favicon.png" sizes="any" type="image/png">
+<link rel="apple-touch-icon" href="img/apple-touch-icon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@600;700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700&family=Work+Sans:wght@400;500;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="site.css">
 </head>
 <body>
 
-<nav class="nav">
-  <a class="brand" href="index.html">Spotorama</a>
-  <a href="how-to-play.html">How to play</a>
-  <a href="whats-next.html" aria-current="page">What's next</a>
-  <a href="support.html">Support</a>
-</nav>
+<header class="nav">
+  <div class="nav__in">
+    <a class="brand" href="index.html">Sp<svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="12" fill="var(--s1)"/></svg>torama</a>
+    <nav class="nav__links" aria-label="Main">
+      <a href="how-to-play.html">How to play</a>
+      <a href="whats-next.html" aria-current="page">What's next</a>
+      <a href="support.html">Support</a>
+    </nav>
+  </div>
+</header>
 
-<div class="wrap">
+<main>
 
-  <header class="hero" style="padding-bottom:0.5rem;">
-    <h1>What's next</h1>
-    <p class="lede">
-      Where Spotorama is going, and the one promise underneath all of it.
-    </p>
-  </header>
+<section class="pagehead">
+  <div class="wrap">
+    <h1 class="h1 h1--page">What&rsquo;s next</h1>
+    <p class="lede">Where Spotorama is going, and the one promise underneath all of it.</p>
+  </div>
+</section>
 
-  <section class="panel">
-    <h2>The rule everything here has to obey</h2>
-    <p>
-      Spotorama has no account, no server and no sign-in, and it works in the middle of
-      nowhere with no signal at all. That is the point of it, not a limitation waiting to be
-      fixed — so nothing below asks you to make an account or requires the internet to work.
-    </p>
-    <p class="muted">
-      These are directions, not dates. Everything here is an idea being worked on rather than
-      a feature that has shipped.
-    </p>
-  </section>
+<section class="wrap">
+  <div class="rulebox">
+    <h2 class="h3 rulebox__h">The rule everything here has to obey</h2>
+    <div class="cols2 cols2--top">
+      <p class="teamp">Spotorama has no account, no server and no sign-in, and it works in the middle of nowhere with no signal at all. That is the point of it, not a limitation waiting to be fixed &mdash; so nothing below asks you to make an account or requires the internet to work.</p>
+      <p class="dim">These are directions, not dates. Everything here is an idea being worked on rather than a feature that has shipped.</p>
+    </div>
+  </div>
 
-  <section class="panel">
-    <ul class="next">
-      <li>
-        <span class="tag planned">Designed for, not built yet</span>
-        <h3>Playing across several phones</h3>
-        <p>
-          One phone works well for one car. Two cars travelling together, or a back seat that
-          would rather use their own phone, is a different game — everyone spots on their own
-          device and the scoreboards stay in step.
-        </p>
-        <p>
-          This is the one that has been planned for from the very beginning: the app was built
-          from day one with the seam in the right place, so phones can talk directly to each
-          other over the local connection rather than through anybody's server. Still no
-          account, still nothing that needs a signal.
-        </p>
-      </li>
-      <li>
-        <span class="tag">Idea</span>
-        <h3>Records that carry between trips</h3>
-        <p>
-          Every trip you play is already kept, with the full scoreboard. The obvious next step
-          is to let those trips talk to each other: who has the best run of yellow cars,
-          longest winning streak, most road trains in a single drive, the family record for a
-          Sunday afternoon.
-        </p>
-        <p>
-          Personal and family bests, built from the trips already on your phone — not a global
-          table of strangers.
-        </p>
-      </li>
-      <li>
-        <span class="tag">Idea</span>
-        <h3>Remembering where you spotted things</h3>
-        <p>
-          A spot is more interesting with a place attached to it. Tagging each one with where
-          it happened turns your history into a map of everywhere you have driven — the
-          stretch of highway that is always good for tractors, the town where somebody once
-          found three camper vans in a row.
-        </p>
-        <p>
-          If this arrives it will be optional and switched off until you ask for it, and the
-          places will stay on your phone with everything else.
-        </p>
-      </li>
-    </ul>
-  </section>
+  <div class="items">
+    <article class="item item--planned">
+      <span class="tag tag--planned mono"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="3" fill="currentColor"/></svg>Designed for, not built yet</span>
+      <h2 class="h3 item__h">Playing across several phones</h2>
+      <div class="cols2 cols2--top">
+        <p class="teamp">One phone works well for one car. Two cars travelling together, or a back seat that would rather use their own phone, is a different game &mdash; everyone spots on their own device and the scoreboards stay in step.</p>
+        <p class="teamp">This is the one that has been planned for from the very beginning: the app was built from day one with the seam in the right place, so phones can talk directly to each other over the local connection rather than through anybody&rsquo;s server. Still no account, still nothing that needs a signal.</p>
+      </div>
+    </article>
 
-  <section class="panel">
-    <h2>Got a better idea?</h2>
-    <p>
-      Most of what is worth building comes from people who actually play it on a long drive.
-      If your family plays a version of this that the app cannot do yet, tell me:
-      <a href="mailto:spotorama.app@gmail.com">spotorama.app@gmail.com</a>.
-    </p>
-  </section>
+    <article class="item">
+      <span class="tag mono"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="10" fill="none" stroke="currentColor" stroke-width="4"/></svg>Idea</span>
+      <h2 class="h3 item__h">Records that carry between trips</h2>
+      <div class="cols2 cols2--top">
+        <p class="teamp">Every trip you play is already kept, with the full scoreboard. The obvious next step is to let those trips talk to each other: who has the best run of yellow cars, longest winning streak, most road trains in a single drive, the family record for a Sunday afternoon.</p>
+        <p class="teamp">Personal and family bests, built from the trips already on your phone &mdash; not a global table of strangers.</p>
+      </div>
+    </article>
 
-</div>
+    <article class="item">
+      <span class="tag mono"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="10" fill="none" stroke="currentColor" stroke-width="4"/></svg>Idea</span>
+      <h2 class="h3 item__h">Remembering where you spotted things</h2>
+      <div class="cols2 cols2--top">
+        <p class="teamp">A spot is more interesting with a place attached to it. Tagging each one with where it happened turns your history into a map of everywhere you have driven &mdash; the stretch of highway that is always good for tractors, the town where somebody once found three camper vans in a row.</p>
+        <p class="teamp">If this arrives it will be optional and switched off until you ask for it, and the places will stay on your phone with everything else.</p>
+      </div>
+    </article>
+  </div>
 
-<footer>
-  Spotorama is made by Justin Schaapveld in Australia.<br>
-  <a href="index.html">Home</a> ·
-  <a href="how-to-play.html">How to play</a> ·
-  <a href="support.html">Support</a> ·
-  <a href="privacy.html">Privacy</a>
+  <div class="closer">
+    <h2 class="h2">Got a better idea?</h2>
+    <p class="lede">Most of what is worth building comes from people who actually play it on a long drive. If your family plays a version of this that the app cannot do yet, tell me: <a href="mailto:spotorama.app@gmail.com">spotorama.app@gmail.com</a>.</p>
+  </div>
+</section>
+
+</main>
+
+<footer class="footer">
+  <div class="footer__in">
+    <div>
+      <span class="brand">Sp<svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="12" fill="var(--s1)"/></svg>torama</span>
+      <p class="fnote">Spotorama is made by Justin Schaapveld in Australia.</p>
+      <p class="mono fdom">spotorama.au</p>
+    </div>
+    <div class="fcol">
+      <span class="flabel mono">The game</span>
+      <a href="index.html">Home</a>
+      <a href="how-to-play.html">How to play</a>
+      <a href="whats-next.html">What's next</a>
+    </div>
+    <div class="fcol">
+      <span class="flabel mono">Help</span>
+      <a href="support.html">Support</a>
+      <a href="privacy.html">Privacy</a>
+      <a href="mailto:spotorama.app@gmail.com">spotorama.app@gmail.com</a>
+    </div>
+  </div>
 </footer>
 
 </body>

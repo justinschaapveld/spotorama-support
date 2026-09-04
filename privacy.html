@@ -5,21 +5,28 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Privacy Policy — Spotorama</title>
 <meta name="description" content="Spotorama collects no data. No account, no analytics, no server. Everything stays on your device.">
+<link rel="icon" href="img/favicon.png" sizes="any" type="image/png">
+<link rel="apple-touch-icon" href="img/apple-touch-icon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@600;700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700&family=Work+Sans:wght@400;500;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="site.css">
 </head>
 <body>
 
-<nav class="nav">
-  <a class="brand" href="index.html">Spotorama</a>
-  <a href="how-to-play.html">How to play</a>
-  <a href="whats-next.html">What's next</a>
-  <a href="support.html">Support</a>
-</nav>
+<header class="nav">
+  <div class="nav__in">
+    <a class="brand" href="index.html">Sp<svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="12" fill="var(--s1)"/></svg>torama</a>
+    <nav class="nav__links" aria-label="Main">
+      <a href="how-to-play.html">How to play</a>
+      <a href="whats-next.html">What's next</a>
+      <a href="support.html">Support</a>
+    </nav>
+  </div>
+</header>
 
-<div class="wrap">
+<main>
+<div class="wrap narrow">
 <section class="panel">
   <h1>Spotorama — Privacy Policy</h1>
   <p class="updated">Last updated 3 September 2026</p>
@@ -104,13 +111,28 @@
   </p>
 </section>
 </div>
+</main>
 
-<footer>
-  Spotorama is made by Justin Schaapveld in Australia.<br>
-  <a href="index.html">Home</a> &middot;
-  <a href="how-to-play.html">How to play</a> &middot;
-  <a href="whats-next.html">What's next</a> &middot;
-  <a href="support.html">Support</a>
+<footer class="footer">
+  <div class="footer__in">
+    <div>
+      <span class="brand">Sp<svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="12" fill="var(--s1)"/></svg>torama</span>
+      <p class="fnote">Spotorama is made by Justin Schaapveld in Australia.</p>
+      <p class="mono fdom">spotorama.au</p>
+    </div>
+    <div class="fcol">
+      <span class="flabel mono">The game</span>
+      <a href="index.html">Home</a>
+      <a href="how-to-play.html">How to play</a>
+      <a href="whats-next.html">What's next</a>
+    </div>
+    <div class="fcol">
+      <span class="flabel mono">Help</span>
+      <a href="support.html">Support</a>
+      <a href="privacy.html">Privacy</a>
+      <a href="mailto:spotorama.app@gmail.com">spotorama.app@gmail.com</a>
+    </div>
+  </div>
 </footer>
 
 </body>

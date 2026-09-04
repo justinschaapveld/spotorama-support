@@ -5,171 +5,182 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>How to play — Spotorama</title>
 <meta name="description" content="How a game of Spotorama works: add everyone, pick a list, call what you spot. Up to seven players on one phone, by voice or by tap.">
+<link rel="icon" href="img/favicon.png" sizes="any" type="image/png">
+<link rel="apple-touch-icon" href="img/apple-touch-icon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@600;700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700&family=Work+Sans:wght@400;500;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="site.css">
 </head>
 <body>
 
-<nav class="nav">
-  <a class="brand" href="index.html">Spotorama</a>
-  <a href="how-to-play.html" aria-current="page">How to play</a>
-  <a href="whats-next.html">What's next</a>
-  <a href="support.html">Support</a>
-</nav>
+<header class="nav">
+  <div class="nav__in">
+    <a class="brand" href="index.html">Sp<svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="12" fill="var(--s1)"/></svg>torama</a>
+    <nav class="nav__links" aria-label="Main">
+      <a href="how-to-play.html" aria-current="page">How to play</a>
+      <a href="whats-next.html">What's next</a>
+      <a href="support.html">Support</a>
+    </nav>
+  </div>
+</header>
 
-<div class="wrap">
+<main>
 
-  <header class="hero" style="padding-bottom:0.5rem;">
-    <h1>How to play</h1>
+<section class="pagehead">
+  <div class="wrap">
+    <h1 class="h1 h1--page">How to play</h1>
     <p class="lede">Three things to set up, then you are playing for the rest of the drive.</p>
-  </header>
+  </div>
+</section>
 
-  <section class="panel">
-    <ol class="steps">
-      <li>
-        <h3>Add everyone in the car</h3>
-        <p>Each person gets one of seven colours and a shape — a circle, a triangle, a star.
-           The shape is how you find yourself on the scoreboard, and it stays yours no matter
-           which theme the app is wearing. You can note where people usually sit, which is
-           what makes “left side against right side” possible later.</p>
-      </li>
-      <li>
-        <h3>Start a trip and pick a list</h3>
-        <p>Choose one of the four built-in lists or one of your own, tick who is playing, and
-           decide how it ends — when you stop, at a target score, when somebody finishes the
-           list, or after a set time.</p>
-        <figure class="shot">
-          <img src="img/new-trip.png" width="303" height="660"
-               alt="Starting a trip: choosing a spot list and ticking who is playing.">
-        </figure>
-      </li>
-      <li>
-        <h3>Call what you spot</h3>
-        <p>Tap the card for the thing you spotted, then tap who spotted it. Playing on your
-           own, it is a single tap. If listening is on, saying “Spotto!” does the same thing
-           without anybody touching the phone.</p>
-        <figure class="shot">
-          <img src="img/who-spotted-it.png" width="303" height="660"
-               alt="After tapping a spot card, the app asks who spotted it.">
-          <figcaption>Tap what you spotted, then tap who spotted it.</figcaption>
-        </figure>
-      </li>
-    </ol>
-  </section>
+<section class="steps">
+  <div class="wrap">
 
-  <section class="panel">
-    <h2>Calling it out loud</h2>
-    <p>
-      Turn on listening with the waveform button on the game screen and the app listens for
-      the calls on your list. Say the call and your name — <em>“Spotto, Audrey”</em> — and the
-      point goes straight to the right person. A bare <em>“Spotto!”</em> still scores; you can
-      say whose it was a moment later and the app moves it.
-    </p>
-    <p>
-      Voice is entirely optional and nothing is locked behind it. Every single thing that can
-      be spoken can be tapped instead, so a call the app mishears costs you one tap and never
-      the game.
-    </p>
-    <div class="callout">
-      <p>
-        <strong>Two things worth knowing.</strong> The first time you use voice, iOS downloads
-        a speech model, so that one time needs a connection — after that it works with no
-        signal at all. And Spotorama will not start listening over music that is already
-        playing; it refuses rather than talking over you, and if music starts mid-trip it
-        hands the audio back and tells you it has stopped.
-      </p>
-    </div>
-  </section>
-
-  <section class="panel">
-    <h2>What is on the lists</h2>
-    <p class="muted">
-      Four lists ship with the app, six spots each. Everything here is editable — the points,
-      the names, the lot — and you can build a list from nothing.
-    </p>
-
-    <h3>Classic Road Trip</h3>
-    <div class="spots">
-      <div class="spot"><span>Yellow Car</span><span class="pts">1</span></div>
-      <div class="spot"><span>Beetle</span><span class="pts">2</span></div>
-      <div class="spot"><span>Camper Van</span><span class="pts">3</span></div>
-      <div class="spot"><span>Tractor</span><span class="pts">3</span></div>
-      <div class="spot"><span>Police Car</span><span class="pts">2</span></div>
-      <div class="spot"><span>Yellow Number Plate</span><span class="pts">2</span></div>
+    <div class="step">
+      <div>
+        <div class="step__hd"><span class="num">1</span><h2 class="h3 steph">Add everyone in the car</h2></div>
+        <p class="stepp">Each person gets one of seven colours and a shape &mdash; a circle, a triangle, a star. The shape is how you find yourself on the scoreboard, and it stays yours no matter which theme the app is wearing. You can note where people usually sit, which is what makes &ldquo;left side against right side&rdquo; possible later.</p>
+      </div>
+      <div class="hgrid hgrid--7">
+        <div class="slot"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="11" fill="var(--s1)"/></svg><span class="mono slotn">01</span></div>
+        <div class="slot"><svg viewBox="0 0 24 24" aria-hidden="true"><polygon points="12,1.5 23,22.5 1,22.5" fill="var(--s2)"/></svg><span class="mono slotn">02</span></div>
+        <div class="slot"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="1.5" y="1.5" width="21" height="21" rx="3" fill="var(--s3)"/></svg><span class="mono slotn">03</span></div>
+        <div class="slot"><svg viewBox="0 0 24 24" aria-hidden="true"><polygon points="12,1 23,12 12,23 1,12" fill="var(--s4)"/></svg><span class="mono slotn">04</span></div>
+        <div class="slot"><svg viewBox="0 0 24 24" aria-hidden="true"><polygon points="12,1.5 15.2,8.4 22.5,9.3 17.1,14.4 18.5,21.7 12,18 5.5,21.7 6.9,14.4 1.5,9.3 8.8,8.4" fill="var(--s5)"/></svg><span class="mono slotn">05</span></div>
+        <div class="slot"><svg viewBox="0 0 24 24" aria-hidden="true"><polygon points="8.5,1.5 15.5,1.5 15.5,8.5 22.5,8.5 22.5,15.5 15.5,15.5 15.5,22.5 8.5,22.5 8.5,15.5 1.5,15.5 1.5,8.5 8.5,8.5" fill="var(--s6)"/></svg><span class="mono slotn">06</span></div>
+        <div class="slot"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 22S1.5 14.8 1.5 8.2A5.2 5.2 0 0 1 12 6a5.2 5.2 0 0 1 10.5 2.2C22.5 14.8 12 22 12 22Z" fill="var(--s7)"/></svg><span class="mono slotn">07</span></div>
+      </div>
     </div>
 
-    <h3>Paddock Patrol</h3>
-    <div class="spots">
-      <div class="spot"><span>Sheep</span><span class="pts">1</span></div>
-      <div class="spot"><span>Cattle</span><span class="pts">1</span></div>
-      <div class="spot"><span>Horse</span><span class="pts">2</span></div>
-      <div class="spot"><span>Kangaroo</span><span class="pts">3</span></div>
-      <div class="spot"><span>Alpaca</span><span class="pts">5</span></div>
-      <div class="spot"><span>Scarecrow</span><span class="pts">5</span></div>
+    <div class="step">
+      <div>
+        <div class="step__hd"><span class="num">2</span><h2 class="h3 steph">Start a trip and pick a list</h2></div>
+        <p class="stepp">Choose one of the four built-in lists or one of your own, tick who is playing, and decide how it ends &mdash; when you stop, at a target score, when somebody finishes the list, or after a set time.</p>
+      </div>
+      <div class="device device--inline"><img src="img/new-trip.png" width="303" height="660" alt="Starting a trip: choosing a spot list and ticking who is playing."></div>
     </div>
 
-    <h3>Big Rigs</h3>
-    <div class="spots">
-      <div class="spot"><span>Semi Trailer</span><span class="pts">1</span></div>
-      <div class="spot"><span>Tow Truck</span><span class="pts">3</span></div>
-      <div class="spot"><span>Cement Mixer</span><span class="pts">3</span></div>
-      <div class="spot"><span>Car Carrier</span><span class="pts">4</span></div>
-      <div class="spot"><span>Fire Truck</span><span class="pts">4</span></div>
-      <div class="spot"><span>Road Train</span><span class="pts">8</span></div>
+    <div class="step">
+      <div>
+        <div class="step__hd"><span class="num">3</span><h2 class="h3 steph">Call what you spot</h2></div>
+        <p class="stepp">Tap the card for the thing you spotted, then tap who spotted it. Playing on your own, it is a single tap. If listening is on, saying &ldquo;Spotto!&rdquo; does the same thing without anybody touching the phone.</p>
+      </div>
+      <figure>
+        <div class="device device--inline"><img src="img/who-spotted-it.png" width="303" height="660" alt="After tapping a spot card, the app asks who spotted it."></div>
+        <figcaption>Tap what you spotted, then tap who spotted it.</figcaption>
+      </figure>
     </div>
 
-    <h3>Around Town</h3>
-    <div class="spots">
-      <div class="spot"><span>Roundabout</span><span class="pts">1</span></div>
-      <div class="spot"><span>Church</span><span class="pts">2</span></div>
-      <div class="spot"><span>Water Tower</span><span class="pts">3</span></div>
-      <div class="spot"><span>Silo</span><span class="pts">3</span></div>
-      <div class="spot"><span>Windmill</span><span class="pts">4</span></div>
-      <div class="spot"><span>Funny Letterbox</span><span class="pts">5</span></div>
+  </div>
+</section>
+
+<section class="section section--raise">
+  <div class="wrap">
+    <h2 class="h2">Calling it out loud</h2>
+    <div class="cols2 cols2--top">
+      <div class="voice">
+        <p>Turn on listening with the waveform button on the game screen and the app listens for the calls on your list. Say the call and your name &mdash; <em>&ldquo;Spotto, Audrey&rdquo;</em> &mdash; and the point goes straight to the right person. A bare <em>&ldquo;Spotto!&rdquo;</em> still scores; you can say whose it was a moment later and the app moves it.</p>
+        <p>Voice is entirely optional and nothing is locked behind it. Every single thing that can be spoken can be tapped instead, so a call the app mishears costs you one tap and never the game.</p>
+      </div>
+      <div class="callout">
+        <span class="mono flabel">Two things worth knowing</span>
+        <p>The first time you use voice, iOS downloads a speech model, so that one time needs a connection &mdash; after that it works with no signal at all. And Spotorama will not start listening over music that is already playing; it refuses rather than talking over you, and if music starts mid-trip it hands the audio back and tells you it has stopped.</p>
+      </div>
     </div>
-  </section>
+  </div>
+</section>
 
-  <section class="panel">
-    <h2>Teams</h2>
-    <p>
-      Kids against grown-ups, front seat against back, or whoever you like. A team changes
-      what the scoreboard adds up, never what a spot is worth — you still call your own name,
-      and the app knows which side you are on.
-    </p>
-    <p>
-      If you have filled in a few details about people, the app can suggest a split and tell
-      you why. If it cannot make a fair one honestly, it says so rather than guessing about
-      somebody.
-    </p>
-    <figure class="shot">
-      <img src="img/teams.png" width="303" height="660"
-           alt="A trip in progress with players divided into two teams.">
-    </figure>
-  </section>
+<section class="section">
+  <div class="wrap">
+    <h2 class="h2">What is on the lists</h2>
+    <p class="intro">Four lists ship with the app, six spots each. Everything here is editable &mdash; the points, the names, the lot &mdash; and you can build a list from nothing.</p>
+    <div class="lists">
+      <div class="list">
+        <div class="list__hd"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="11" fill="var(--s1)"/></svg><span class="nm">Classic Road Trip</span><span class="mono ptsh">PTS</span></div>
+        <div class="row"><span class="tile mono" aria-hidden="true">YC</span><span class="nm">Yellow Car</span><span class="pts">1</span></div>
+        <div class="row"><span class="tile mono" aria-hidden="true">BE</span><span class="nm">Beetle</span><span class="pts">2</span></div>
+        <div class="row"><span class="tile mono" aria-hidden="true">CV</span><span class="nm">Camper Van</span><span class="pts">3</span></div>
+        <div class="row"><span class="tile mono" aria-hidden="true">TR</span><span class="nm">Tractor</span><span class="pts">3</span></div>
+        <div class="row"><span class="tile mono" aria-hidden="true">PC</span><span class="nm">Police Car</span><span class="pts">2</span></div>
+        <div class="row"><span class="tile mono" aria-hidden="true">YN</span><span class="nm">Yellow Number Plate</span><span class="pts">2</span></div>
+      </div>
+      <div class="list">
+        <div class="list__hd"><svg viewBox="0 0 24 24" aria-hidden="true"><polygon points="12,1.5 23,22.5 1,22.5" fill="var(--s2)"/></svg><span class="nm">Paddock Patrol</span><span class="mono ptsh">PTS</span></div>
+        <div class="row"><span class="tile mono" aria-hidden="true">SH</span><span class="nm">Sheep</span><span class="pts">1</span></div>
+        <div class="row"><span class="tile mono" aria-hidden="true">CA</span><span class="nm">Cattle</span><span class="pts">1</span></div>
+        <div class="row"><span class="tile mono" aria-hidden="true">HO</span><span class="nm">Horse</span><span class="pts">2</span></div>
+        <div class="row"><span class="tile mono" aria-hidden="true">KA</span><span class="nm">Kangaroo</span><span class="pts">3</span></div>
+        <div class="row"><span class="tile mono" aria-hidden="true">AL</span><span class="nm">Alpaca</span><span class="pts">5</span></div>
+        <div class="row"><span class="tile mono" aria-hidden="true">SC</span><span class="nm">Scarecrow</span><span class="pts">5</span></div>
+      </div>
+      <div class="list">
+        <div class="list__hd"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="1.5" y="1.5" width="21" height="21" rx="3" fill="var(--s3)"/></svg><span class="nm">Big Rigs</span><span class="mono ptsh">PTS</span></div>
+        <div class="row"><span class="tile mono" aria-hidden="true">ST</span><span class="nm">Semi Trailer</span><span class="pts">1</span></div>
+        <div class="row"><span class="tile mono" aria-hidden="true">TT</span><span class="nm">Tow Truck</span><span class="pts">3</span></div>
+        <div class="row"><span class="tile mono" aria-hidden="true">CM</span><span class="nm">Cement Mixer</span><span class="pts">3</span></div>
+        <div class="row"><span class="tile mono" aria-hidden="true">CC</span><span class="nm">Car Carrier</span><span class="pts">4</span></div>
+        <div class="row"><span class="tile mono" aria-hidden="true">FT</span><span class="nm">Fire Truck</span><span class="pts">4</span></div>
+        <div class="row row--hi"><span class="tile mono" aria-hidden="true">RT</span><span class="nm">Road Train</span><span class="pts">8</span></div>
+      </div>
+      <div class="list">
+        <div class="list__hd"><svg viewBox="0 0 24 24" aria-hidden="true"><polygon points="12,1 23,12 12,23 1,12" fill="var(--s4)"/></svg><span class="nm">Around Town</span><span class="mono ptsh">PTS</span></div>
+        <div class="row"><span class="tile mono" aria-hidden="true">RO</span><span class="nm">Roundabout</span><span class="pts">1</span></div>
+        <div class="row"><span class="tile mono" aria-hidden="true">CH</span><span class="nm">Church</span><span class="pts">2</span></div>
+        <div class="row"><span class="tile mono" aria-hidden="true">WT</span><span class="nm">Water Tower</span><span class="pts">3</span></div>
+        <div class="row"><span class="tile mono" aria-hidden="true">SI</span><span class="nm">Silo</span><span class="pts">3</span></div>
+        <div class="row"><span class="tile mono" aria-hidden="true">WI</span><span class="nm">Windmill</span><span class="pts">4</span></div>
+        <div class="row"><span class="tile mono" aria-hidden="true">FL</span><span class="nm">Funny Letterbox</span><span class="pts">5</span></div>
+      </div>
+    </div>
+  </div>
+</section>
 
-  <section class="panel">
-    <h2>When somebody gets it wrong</h2>
-    <p>
-      Press and hold a spot card and choose <strong>Take one back</strong>, then pick who it
-      comes off. The list button at the top right of the game screen shows everything scored
-      this trip, so you can fix anything from there.
-    </p>
-    <p>
-      Nothing is ever really deleted — a correction is recorded as a correction, which is why
-      the history of an old trip still adds up years later.
-    </p>
-  </section>
+<section class="section section--raise">
+  <div class="wrap">
+    <div class="cols2 cols2--mid">
+      <div>
+        <h2 class="h2">Teams</h2>
+        <p class="teamp">Kids against grown-ups, front seat against back, or whoever you like. A team changes what the scoreboard adds up, never what a spot is worth &mdash; you still call your own name, and the app knows which side you are on.</p>
+        <p class="teamp">If you have filled in a few details about people, the app can suggest a split and tell you why. If it cannot make a fair one honestly, it says so rather than guessing about somebody.</p>
+      </div>
+      <div class="device device--inline"><img src="img/teams.png" width="303" height="660" alt="A trip in progress with players divided into two teams."></div>
+    </div>
+  </div>
+</section>
 
-</div>
+<section class="section">
+  <div class="wrap">
+    <h2 class="h2">When somebody gets it wrong</h2>
+    <div class="cols2 cols2--top">
+      <p class="teamp">Press and hold a spot card and choose <strong>Take one back</strong>, then pick who it comes off. The list button at the top right of the game screen shows everything scored this trip, so you can fix anything from there.</p>
+      <p class="teamp">Nothing is ever really deleted &mdash; a correction is recorded as a correction, which is why the history of an old trip still adds up years later.</p>
+    </div>
+  </div>
+</section>
 
-<footer>
-  Spotorama is made by Justin Schaapveld in Australia.<br>
-  <a href="index.html">Home</a> ·
-  <a href="whats-next.html">What's next</a> ·
-  <a href="support.html">Support</a> ·
-  <a href="privacy.html">Privacy</a>
+</main>
+
+<footer class="footer">
+  <div class="footer__in">
+    <div>
+      <span class="brand">Sp<svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="12" fill="var(--s1)"/></svg>torama</span>
+      <p class="fnote">Spotorama is made by Justin Schaapveld in Australia.</p>
+      <p class="mono fdom">spotorama.au</p>
+    </div>
+    <div class="fcol">
+      <span class="flabel mono">The game</span>
+      <a href="index.html">Home</a>
+      <a href="how-to-play.html">How to play</a>
+      <a href="whats-next.html">What's next</a>
+    </div>
+    <div class="fcol">
+      <span class="flabel mono">Help</span>
+      <a href="support.html">Support</a>
+      <a href="privacy.html">Privacy</a>
+      <a href="mailto:spotorama.app@gmail.com">spotorama.app@gmail.com</a>
+    </div>
+  </div>
 </footer>
 
 </body>

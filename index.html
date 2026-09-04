@@ -8,149 +8,181 @@
 <meta property="og:title" content="Spotorama — the car game that keeps score">
 <meta property="og:description" content="Somebody calls it, the app awards the point, and nobody argues about the score.">
 <meta property="og:type" content="website">
+<meta property="og:url" content="https://spotorama.au/">
+<meta property="og:image" content="https://spotorama.au/img/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://spotorama.au/img/og-image.png">
+<link rel="icon" href="img/favicon.png" sizes="any" type="image/png">
+<link rel="apple-touch-icon" href="img/apple-touch-icon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@600;700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700&family=Work+Sans:wght@400;500;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="site.css">
 </head>
 <body>
 
-<nav class="nav">
-  <a class="brand" href="index.html">Spotorama</a>
-  <a href="how-to-play.html">How to play</a>
-  <a href="whats-next.html">What's next</a>
-  <a href="support.html">Support</a>
-</nav>
+<header class="nav">
+  <div class="nav__in">
+    <a class="brand" href="index.html">Sp<svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="12" fill="var(--s1)"/></svg>torama</a>
+    <nav class="nav__links" aria-label="Main">
+      <a href="how-to-play.html">How to play</a>
+      <a href="whats-next.html">What's next</a>
+      <a href="support.html">Support</a>
+    </nav>
+  </div>
+</header>
 
-<div class="wrap">
+<main>
 
-  <header class="hero">
-    <div class="shapes" aria-hidden="true">
-      <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="11" fill="var(--p0)" stroke="var(--ink)" stroke-width="2"/></svg>
-      <svg viewBox="0 0 24 24"><path d="M12 1.5 23 22.5H1Z" fill="var(--p1)" stroke="var(--ink)" stroke-width="2" stroke-linejoin="round"/></svg>
-      <svg viewBox="0 0 24 24"><rect x="1.5" y="1.5" width="21" height="21" rx="4" fill="var(--p2)" stroke="var(--ink)" stroke-width="2"/></svg>
-      <svg viewBox="0 0 24 24"><path d="M12 1 23 12 12 23 1 12Z" fill="var(--p3)" stroke="var(--ink)" stroke-width="2" stroke-linejoin="round"/></svg>
-      <svg viewBox="0 0 24 24"><path d="M12 1.5l3.2 6.9 7.3.9-5.4 5.1 1.4 7.3-6.5-3.7-6.5 3.7 1.4-7.3L1.5 9.3l7.3-.9Z" fill="var(--p4)" stroke="var(--ink)" stroke-width="2" stroke-linejoin="round"/></svg>
-      <svg viewBox="0 0 24 24"><path d="M8.5 1.5h7v7h7v7h-7v7h-7v-7h-7v-7h7Z" fill="var(--p5)" stroke="var(--ink)" stroke-width="2" stroke-linejoin="round"/></svg>
-      <svg viewBox="0 0 24 24"><path d="M12 22S1.5 14.8 1.5 8.2A5.2 5.2 0 0 1 12 6a5.2 5.2 0 0 1 10.5 2.2C22.5 14.8 12 22 12 22Z" fill="var(--p6)" stroke="var(--ink)" stroke-width="2" stroke-linejoin="round"/></svg>
+<section class="hero">
+  <div class="wrap">
+    <p class="call">&ldquo;Spotto!&rdquo;</p>
+    <h1 class="h1">The car game that keeps score</h1>
+    <p class="lede">Somebody spots a yellow car and calls it. Spotorama keeps the score, so everyone in the car can get on with hunting the next one.</p>
+    <div class="cta-row">
+      <!-- Swap for the live link once 1.0 is approved:
+           <a class="btn" href="https://apps.apple.com/au/app/spotorama/id6799803992">…</a> -->
+      <span class="btn btn--pending">
+        <svg viewBox="0 0 24 24" aria-hidden="true" class="ico"><circle cx="12" cy="12" r="8" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M12 7.5v5l3.4 2" fill="none" stroke="currentColor" stroke-width="1.6"/></svg>
+        Coming soon to the App&nbsp;Store
+      </span>
+      <span class="meta mono">iPhone &middot; up to seven players<br>no account, no signal needed</span>
+    </div>
+  </div>
+</section>
+
+<section class="section section--raise">
+  <div class="wrap">
+    <div class="eyebrow"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="11" fill="var(--s1)"/></svg><span class="label mono">Where this came from</span><span class="line"></span></div>
+    <div class="prose">
+      <p>A drive from Sydney to Orange to see family &mdash; about three and a half hours of it. Audrey was seven and Sadie was three, and they were bored a few minutes in.</p>
+      <p>So we made up a game. Yellow cars, obviously, because that part has never been negotiable. Audrey and Sadie wanted pink cars and purple cars, two points each. I like sports cars more than a grown man probably should, so I added a unicorn &mdash; a McLaren, a Lamborghini or a Ferrari &mdash; worth a monstrous ten. We argued the whole thing out before anyone had spotted anything.</p>
     </div>
 
-    <div class="call">“Spotto!”</div>
-    <h1>The car game that keeps score</h1>
-    <p class="lede">
-      Somebody spots a yellow car and calls it. Spotorama keeps the score, so everyone in the
-      car can get on with hunting the next one.
-    </p>
+    <div class="card scorecard">
+      <div class="card__head">
+        <span class="card__ttl">The list we made that day</span>
+        <span class="mono card__meta">SYDNEY &rarr; ORANGE &middot; 3 H 30</span>
+      </div>
+      <div class="rules">
+        <div class="rule"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="11" fill="var(--s1)"/></svg><span class="rule__nm">Yellow car</span><span class="rule__pts"><span class="rule__n">1</span><span class="rule__u mono">point</span></span></div>
+        <div class="rule"><svg viewBox="0 0 24 24" aria-hidden="true"><polygon points="12,1.5 23,22.5 1,22.5" fill="var(--s2)"/></svg><span class="rule__nm">Pink car</span><span class="rule__pts"><span class="rule__n">2</span><span class="rule__u mono">points</span></span></div>
+        <div class="rule"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="1.5" y="1.5" width="21" height="21" rx="3" fill="var(--s3)"/></svg><span class="rule__nm">Purple car</span><span class="rule__pts"><span class="rule__n">2</span><span class="rule__u mono">points</span></span></div>
+        <div class="rule rule--hi"><svg viewBox="0 0 24 24" aria-hidden="true"><polygon points="12,1 23,12 12,23 1,12" fill="var(--s4)"/></svg><span><span class="rule__nm">Unicorn</span><span class="rule__sub">A McLaren, a Lamborghini or a Ferrari</span></span><span class="rule__pts"><span class="rule__n">10</span><span class="rule__u mono">points</span></span></div>
+      </div>
+    </div>
+    <p class="mono cardnote">Argued out before anyone had spotted anything. Not a list in the app &mdash; the one that started it.</p>
 
-    <!-- Swap for the live link once 1.0 is approved:
-         https://apps.apple.com/au/app/spotorama/id6799803992 -->
-    <span class="btn pending">Coming soon to the App&nbsp;Store</span>
-  </header>
-
-  <section class="panel">
-    <h2>Where this came from</h2>
-    <p>
-      A drive from Sydney to Orange to see family — about three and a half hours of it. Audrey
-      was seven and Sadie was three, and they were bored a few minutes in.
-    </p>
-    <p>
-      So we made up a game. Yellow cars, obviously, because that part has never been
-      negotiable. Audrey and Sadie wanted pink cars and purple cars, two points each. I like
-      sports cars more than a grown man probably should, so I added a unicorn — a McLaren, a
-      Lamborghini or a Ferrari — worth a monstrous ten. We argued the whole thing out before
-      anyone had spotted anything.
-    </p>
-    <p>
-      Nobody mentioned being bored again for the rest of the drive. All four of us spent three
-      and a half hours hunting for the next one.
-    </p>
-    <p>
-      The part that worked was not the scoring. It was that we built the list together —
-      everybody got a spot they had argued for, and everybody wanted theirs to be the one that
-      turned up. That is why Spotorama lets you change all of it: every list, every point
-      value, every way a game can end. Whatever your family argues out in the first ten
-      minutes will beat anything I could ship.
-    </p>
-    <p>
-      What I did not expect was the drive after that one. Nobody asked for an iPad. The girls
-      wanted to know what we were spotting this time.
-    </p>
-  </section>
-
-  <h2>What it does</h2>
-  <div class="grid">
-    <div class="cell">
-      <h3>Up to seven players</h3>
-      <p>One phone, everyone in the car. Each player gets a colour and a shape, and the shape
-         stays theirs everywhere so you can find yourself at a glance.</p>
-    </div>
-    <div class="cell">
-      <h3>Call it or tap it</h3>
-      <p>Say “Spotto!” and the app hears it, or tap the card. Voice is optional and every
-         spoken action can be tapped instead.</p>
-    </div>
-    <div class="cell">
-      <h3>Your rules, not ours</h3>
-      <p>Edit any list, change what a spot is worth, invent your own, and choose how a game
-         ends — on time, on points, or when somebody finishes the list.</p>
-    </div>
-    <div class="cell">
-      <h3>Teams</h3>
-      <p>Kids against grown-ups, front seat against back. The app can suggest a fair split,
-         or you can pick.</p>
-    </div>
-    <div class="cell">
-      <h3>Works with no signal</h3>
-      <p>Built for the middle of nowhere. No account, no server, nothing to sign in to —
-         everything stays on your phone.</p>
-    </div>
-    <div class="cell">
-      <h3>Every trip remembered</h3>
-      <p>Past trips are kept with the full scoreboard, so you can settle who actually won
-         the drive to the coast in April.</p>
+    <div class="prose prose--after">
+      <p>Nobody mentioned being bored again for the rest of the drive. All four of us spent three and a half hours hunting for the next one.</p>
+      <p>The part that worked was not the scoring. It was that we built the list together &mdash; everybody got a spot they had argued for, and everybody wanted theirs to be the one that turned up. That is why Spotorama lets you change all of it: every list, every point value, every way a game can end. Whatever your family argues out in the first ten minutes will beat anything I could ship.</p>
+      <p>What I did not expect was the drive after that one.</p>
     </div>
   </div>
 
-  <div class="shots">
-    <figure class="shot">
-      <img src="img/game-screen.png" width="303" height="660"
-           alt="The Spotorama game screen: a scoreboard of players above a grid of spot cards.">
-      <figcaption>The game screen — everybody's score, and everything you can spot.</figcaption>
-    </figure>
-    <figure class="shot">
-      <img src="img/teams.png" width="303" height="660"
-           alt="A trip in progress with players divided into two teams.">
-      <figcaption>Teams, when it is kids against grown-ups.</figcaption>
-    </figure>
-    <figure class="shot">
-      <img src="img/history.png" width="303" height="660"
-           alt="The history screen, showing past trips with their final scores.">
-      <figcaption>Every trip you have played, kept.</figcaption>
-    </figure>
-  </div>
-
-  <section class="panel" style="margin-top:1.75rem;">
-    <h2>Four lists to start with</h2>
-    <p class="muted">Twenty-four spots across four road trips. Change any of them, or start from nothing.</p>
-    <div class="spots">
-      <div class="spot"><span>Classic Road Trip</span><span class="pts">6 spots</span></div>
-      <div class="spot"><span>Paddock Patrol</span><span class="pts">6 spots</span></div>
-      <div class="spot"><span>Big Rigs</span><span class="pts">6 spots</span></div>
-      <div class="spot"><span>Around Town</span><span class="pts">6 spots</span></div>
+  <div class="bigline-band">
+    <div class="wrap">
+      <p class="bigline">Nobody asked for an iPad. The girls wanted to know what we were spotting this time.</p>
     </div>
-    <p style="margin-top:1.25rem;">
-      <a href="how-to-play.html">See how a game works →</a>
-    </p>
-  </section>
+  </div>
+</section>
 
-</div>
+<section class="section">
+  <div class="wrap">
+    <div class="eyebrow"><svg viewBox="0 0 24 24" aria-hidden="true"><polygon points="12,1.5 23,22.5 1,22.5" fill="var(--s2)"/></svg><span class="label mono">What it does</span><span class="line"></span></div>
+    <div class="hgrid hgrid--3">
+      <div>
+        <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="11" fill="var(--s1)"/></svg>
+        <h3 class="h3">Up to seven players</h3>
+        <p>One phone, everyone in the car. Each player gets a colour and a shape, and the shape stays theirs everywhere so you can find yourself at a glance.</p>
+      </div>
+      <div>
+        <svg viewBox="0 0 24 24" aria-hidden="true"><polygon points="12,1.5 23,22.5 1,22.5" fill="var(--s2)"/></svg>
+        <h3 class="h3">Call it or tap it</h3>
+        <p>Say &ldquo;Spotto!&rdquo; and the app hears it, or tap the card. Voice is optional and every spoken action can be tapped instead.</p>
+      </div>
+      <div>
+        <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="1.5" y="1.5" width="21" height="21" rx="3" fill="var(--s3)"/></svg>
+        <h3 class="h3">Your rules, not ours</h3>
+        <p>Edit any list, change what a spot is worth, invent your own, and choose how a game ends &mdash; on time, on points, or when somebody finishes the list.</p>
+      </div>
+      <div>
+        <svg viewBox="0 0 24 24" aria-hidden="true"><polygon points="12,1 23,12 12,23 1,12" fill="var(--s4)"/></svg>
+        <h3 class="h3">Teams</h3>
+        <p>Kids against grown-ups, front seat against back. The app can suggest a fair split, or you can pick.</p>
+      </div>
+      <div>
+        <svg viewBox="0 0 24 24" aria-hidden="true"><polygon points="12,1.5 15.2,8.4 22.5,9.3 17.1,14.4 18.5,21.7 12,18 5.5,21.7 6.9,14.4 1.5,9.3 8.8,8.4" fill="var(--s5)"/></svg>
+        <h3 class="h3">Works with no signal</h3>
+        <p>Built for the middle of nowhere. No account, no server, nothing to sign in to &mdash; everything stays on your phone.</p>
+      </div>
+      <div>
+        <svg viewBox="0 0 24 24" aria-hidden="true"><polygon points="8.5,1.5 15.5,1.5 15.5,8.5 22.5,8.5 22.5,15.5 15.5,15.5 15.5,22.5 8.5,22.5 8.5,15.5 1.5,15.5 1.5,8.5 8.5,8.5" fill="var(--s6)"/></svg>
+        <h3 class="h3">Every trip remembered</h3>
+        <p>Past trips are kept with the full scoreboard, so you can settle who actually won the drive to the coast in April.</p>
+      </div>
+    </div>
+  </div>
+</section>
 
-<footer>
-  Spotorama is made by Justin Schaapveld in Australia.<br>
-  <a href="how-to-play.html">How to play</a> ·
-  <a href="whats-next.html">What's next</a> ·
-  <a href="support.html">Support</a> ·
-  <a href="privacy.html">Privacy</a>
+<section class="section section--raise">
+  <div class="wrap">
+    <div class="eyebrow"><svg viewBox="0 0 24 24" aria-hidden="true"><polygon points="12,1 23,12 12,23 1,12" fill="var(--s4)"/></svg><span class="label mono">On the phone</span><span class="line"></span></div>
+    <div class="shots">
+      <figure>
+        <div class="device"><img src="img/game-screen.png" width="303" height="660" alt="The Spotorama game screen: a scoreboard of players above a grid of spot cards."></div>
+        <figcaption>The game screen &mdash; everybody&rsquo;s score, and everything you can spot.</figcaption>
+      </figure>
+      <figure>
+        <div class="device"><img src="img/teams.png" width="303" height="660" alt="A trip in progress with players divided into two teams."></div>
+        <figcaption>Teams, when it is kids against grown-ups.</figcaption>
+      </figure>
+      <figure>
+        <div class="device"><img src="img/history.png" width="303" height="660" alt="The history screen, showing past trips with their final scores."></div>
+        <figcaption>Every trip you have played, kept.</figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap">
+    <div class="eyebrow"><svg viewBox="0 0 24 24" aria-hidden="true"><polygon points="12,1.5 15.2,8.4 22.5,9.3 17.1,14.4 18.5,21.7 12,18 5.5,21.7 6.9,14.4 1.5,9.3 8.8,8.4" fill="var(--s5)"/></svg><span class="label mono">Four lists to start with</span><span class="line"></span></div>
+    <p class="intro">Twenty-four spots across four road trips. Change any of them, or start from nothing.</p>
+    <div class="hgrid hgrid--4 hgrid--tight">
+      <div><span class="listname">Classic Road Trip</span><span class="mono listmeta">6 spots</span></div>
+      <div><span class="listname">Paddock Patrol</span><span class="mono listmeta">6 spots</span></div>
+      <div><span class="listname">Big Rigs</span><span class="mono listmeta">6 spots</span></div>
+      <div><span class="listname">Around Town</span><span class="mono listmeta">6 spots</span></div>
+    </div>
+    <p class="after"><a href="how-to-play.html">See how a game works &rarr;</a></p>
+  </div>
+</section>
+
+</main>
+
+<footer class="footer">
+  <div class="footer__in">
+    <div>
+      <span class="brand">Sp<svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="12" fill="var(--s1)"/></svg>torama</span>
+      <p class="fnote">Spotorama is made by Justin Schaapveld in Australia.</p>
+      <p class="mono fdom">spotorama.au</p>
+    </div>
+    <div class="fcol">
+      <span class="flabel mono">The game</span>
+      <a href="index.html">Home</a>
+      <a href="how-to-play.html">How to play</a>
+      <a href="whats-next.html">What's next</a>
+    </div>
+    <div class="fcol">
+      <span class="flabel mono">Help</span>
+      <a href="support.html">Support</a>
+      <a href="privacy.html">Privacy</a>
+      <a href="mailto:spotorama.app@gmail.com">spotorama.app@gmail.com</a>
+    </div>
+  </div>
 </footer>
 
 </body>

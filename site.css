@@ -30,6 +30,11 @@
 }
 
 *{box-sizing:border-box}
+
+/* Visually hidden — carries the 'o' the wordmark draws as a spot, so the
+   brand mark's accessible name is "Spotorama" and not "Sptorama". */
+.vh{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0 0 0 0);clip-path:inset(50%);white-space:nowrap;border:0}
+
 html{-webkit-text-size-adjust:100%}
 body{
   margin:0; background:var(--paper); color:var(--ink);

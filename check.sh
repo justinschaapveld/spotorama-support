@@ -10,7 +10,9 @@ bad()  { printf "  \033[31m✗\033[0m %s\n" "$1"; fail=1; }
 echo "1. Frozen privacy text"
 python3 - "$D" <<'PY'
 import re,sys,hashlib,io,os
-EXPECT="db51b6bd39dab643"
+# Re-baselined 7 Sep 2026: the contact address moved to support@spotorama.app.
+# The legal wording is unchanged — only the mailto and its link text differ.
+EXPECT="4683c07ec1d956e9"
 try: s=io.open("privacy.html",encoding="utf-8").read()
 except FileNotFoundError: print("  \033[31m✗\033[0m privacy.html missing"); sys.exit(1)
 m=re.search(r'<section class="panel">(.*)</section>',s,re.S)

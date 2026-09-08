@@ -1,0 +1,6 @@
+.DS_Store
+
+# Written by `npx vercel link` during a deploy. .env.local carries a
+# VERCEL_OIDC_TOKEN — this repository is public, so it must never be committed.
+.vercel/
+.env.local

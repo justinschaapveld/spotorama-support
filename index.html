@@ -37,18 +37,25 @@
 <main>
 
 <section class="hero">
-  <div class="wrap">
-    <p class="call">&ldquo;Spotto!&rdquo;</p>
-    <h1 class="h1">The car game that keeps score</h1>
-    <p class="lede">Somebody spots a yellow car and calls it. Spotorama keeps the score, so everyone in the car can get on with hunting the next one.</p>
-    <div class="cta-row">
-      <!-- Swap for the live link once 1.0 is approved:
-           <a class="btn" href="https://apps.apple.com/au/app/spotorama/id6799803992">…</a> -->
-      <span class="btn btn--pending">
-        <svg viewBox="0 0 24 24" aria-hidden="true" class="ico"><circle cx="12" cy="12" r="8" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M12 7.5v5l3.4 2" fill="none" stroke="currentColor" stroke-width="1.6"/></svg>
-        Coming soon to the App&nbsp;Store
-      </span>
-      <span class="meta mono">iPhone &middot; up to seven players<br>no account, no signal needed</span>
+  <div class="hero__sticky">
+    <div class="hero__inner wrap">
+      <div class="hero__copy">
+        <p class="call">&ldquo;Spotto!&rdquo;</p>
+        <h1 class="h1">The car game that keeps score</h1>
+        <p class="lede">Somebody spots a yellow car and calls it. Spotorama keeps the score, so everyone in the car can get on with hunting the next one.</p>
+        <div class="cta-row">
+          <!-- Swap for the live link once 1.0 is approved:
+               <a class="btn" href="https://apps.apple.com/au/app/spotorama/id6799803992">…</a> -->
+          <span class="btn btn--pending">
+            <svg viewBox="0 0 24 24" aria-hidden="true" class="ico"><circle cx="12" cy="12" r="8" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M12 7.5v5l3.4 2" fill="none" stroke="currentColor" stroke-width="1.6"/></svg>
+            Coming soon to the App&nbsp;Store
+          </span>
+          <span class="meta mono">iPhone &middot; up to seven players<br>no account, no signal needed</span>
+        </div>
+      </div>
+      <div class="hero__stage">
+        <div class="device device--hero"><div class="device__bezel"><img src="img/game-screen.webp" width="660" height="1434" alt="Spotorama running on an iPhone: four players and their scores across the top, a grid of things to spot below."></div></div>
+      </div>
     </div>
   </div>
 </section>
@@ -132,15 +139,15 @@
     <div class="eyebrow"><svg viewBox="0 0 24 24" aria-hidden="true"><polygon points="12,1 23,12 12,23 1,12" fill="var(--s4)"/></svg><span class="label mono">On the phone</span><span class="line"></span></div>
     <div class="shots">
       <figure>
-        <div class="device"><img src="img/game-screen.png" width="303" height="660" alt="The Spotorama game screen: a scoreboard of players above a grid of spot cards."></div>
+        <div class="device"><div class="device__bezel"><img src="img/game-screen.webp" width="660" height="1434" alt="The Spotorama game screen: a scoreboard of players above a grid of spot cards."></div></div>
         <figcaption>The game screen &mdash; everybody&rsquo;s score, and everything you can spot.</figcaption>
       </figure>
       <figure>
-        <div class="device"><img src="img/teams.png" width="303" height="660" alt="A trip in progress with players divided into two teams."></div>
+        <div class="device"><div class="device__bezel"><img src="img/teams.webp" width="660" height="1434" alt="A trip in progress with players divided into two teams."></div></div>
         <figcaption>Teams, when it is kids against grown-ups.</figcaption>
       </figure>
       <figure>
-        <div class="device"><img src="img/history.png" width="303" height="660" alt="The history screen, showing past trips with their final scores."></div>
+        <div class="device"><div class="device__bezel"><img src="img/history.webp" width="660" height="1434" alt="The history screen, showing past trips with their final scores."></div></div>
         <figcaption>Every trip you have played, kept.</figcaption>
       </figure>
     </div>
@@ -184,6 +191,58 @@
     </div>
   </div>
 </footer>
+
+<script>
+/* Scroll-scrubbed hero. Writes --x (vw), --ry (deg) and --o onto .hero from the
+   section's own scroll progress, so the phone tracks the scroll and reverses
+   exactly on the way back up. Armed only on a wide viewport with motion allowed;
+   if this script never runs the hero is an ordinary section with the phone
+   already at rest, which is also what a phone and Reduce Motion get. */
+(function(){
+  var hero = document.querySelector('.hero'); if (!hero) return;
+  var still = matchMedia('(prefers-reduced-motion: reduce)');
+  var wide  = matchMedia('(min-width: 900px)');
+  var queued = 0, armed = false;
+
+  function paint(){
+    queued = 0;
+    var travel = hero.offsetHeight - innerHeight;
+    var p = travel > 0 ? -hero.getBoundingClientRect().top / travel : 1;
+    p = p < 0 ? 0 : p > 1 ? 1 : p;
+    var enter = p / 0.55; if (enter > 1) enter = 1;
+    var e = 1 - Math.pow(1 - enter, 3);          /* easeOutCubic on the way in */
+    var drift = (p - 0.55) / 0.45; if (drift < 0) drift = 0;
+    hero.style.setProperty('--x',  ((1 - e) * 46 - drift * 6).toFixed(3));
+    hero.style.setProperty('--ry', ((1 - e) * -9).toFixed(3));
+    hero.style.setProperty('--o',  (0.25 + 0.75 * e).toFixed(3));
+  }
+  function tick(){ if (!queued) queued = requestAnimationFrame(paint); }
+
+  function sync(){
+    var want = wide.matches && !still.matches;
+    if (want === armed) return;
+    armed = want;
+    if (armed){
+      hero.classList.add('hero--scrub');
+      addEventListener('scroll', tick, {passive:true});
+      paint();
+    } else {
+      removeEventListener('scroll', tick);
+      hero.classList.remove('hero--scrub');
+      hero.style.removeProperty('--x');
+      hero.style.removeProperty('--ry');
+      hero.style.removeProperty('--o');
+    }
+  }
+  function watch(m){
+    if (m.addEventListener) m.addEventListener('change', sync);
+    else if (m.addListener) m.addListener(sync);
+  }
+  addEventListener('resize', function(){ sync(); if (armed) tick(); }, {passive:true});
+  watch(still); watch(wide);
+  sync();
+})();
+</script>
 
 </body>
 </html>

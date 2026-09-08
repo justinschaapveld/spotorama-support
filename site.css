@@ -9,6 +9,11 @@
   --line:#D7DAE0; --line2:#E7E9EC; --hair:#DFE2E7;
   --accent:#00688F; --accent-ink:#FFFFFF; --accent-soft:#E2EFF6;
   --call:#8A5A00; --shadow:rgba(21,24,28,.11);
+  /* device chassis — a machined rail, lit from the top-left */
+  --rail:linear-gradient(155deg,#8E939A 0%,#3B4046 17%,#23272C 37%,#61676E 51%,#24282D 65%,#3D4248 83%,#82878E 100%);
+  --btn:#42474D;
+  --dev-shadow:0 30px 58px -20px rgba(21,24,28,.42), 0 8px 18px -8px rgba(21,24,28,.20);
+  --dev-cast:rgba(21,24,28,.10);
   /* player slots — shape and colour together, order fixed */
   --s1:#FFB300; --s2:#0099CC; --s3:#E62B7B; --s4:#5B4BE0;
   --s5:#1E9E5A; --s6:#D93A2B; --s7:#7A4B2A;
@@ -24,6 +29,10 @@
     --line:#2B3037; --line2:#1F2328; --hair:#24282E;
     --accent:#57C4E8; --accent-ink:#0A1216; --accent-soft:#122A34;
     --call:#FFC24D; --shadow:rgba(0,0,0,.5);
+    --rail:linear-gradient(155deg,#CFD3D9 0%,#7F858E 17%,#5C626A 37%,#AEB3BA 51%,#5A6068 65%,#797F88 83%,#C6CBD2 100%);
+    --btn:#9AA0A8;
+    --dev-shadow:0 34px 64px -20px rgba(0,0,0,.72), 0 10px 22px -10px rgba(0,0,0,.5);
+    --dev-cast:rgba(0,0,0,.30);
     --s1:#FFC24D; --s2:#56C7F0; --s3:#FF6FA8; --s4:#9A8CFF;
     --s5:#7FE0B0; --s6:#FF8A6B; --s7:#C69A6B;
   }
@@ -105,6 +114,38 @@ em{font-style:normal;font-weight:600;color:var(--ink)}
 /* ---------- hero ---------- */
 .hero{padding:56px 0}
 @media (min-width:860px){ .hero{padding:100px 0 84px} }
+
+.hero__inner{display:flex;flex-direction:column;gap:44px}
+.hero__copy{flex:1 1 auto;min-width:0}
+.hero__stage{flex:0 0 auto;display:flex;justify-content:center}
+@media (min-width:900px){
+  .hero__inner{flex-direction:row;align-items:center;gap:56px}
+  /* A definite basis, not auto: the device is width:min(--w,100%), and a
+     shrink-to-fit parent makes that percentage circular — the stage then sizes
+     to the image's intrinsic 660px and starves the copy column. */
+  .hero__stage{flex:0 0 344px;justify-content:flex-end}
+  /* Only where the hero is sticky does the phone have to fit a viewport rather
+     than a column: the chassis is ~2.12x its own width and the sticky box gives
+     it 100vh less 88px of padding. Below this width the page just scrolls. */
+  .device--hero{--w:min(320px, calc(47vh - 42px))}
+}
+/* The scroll-scrubbed entrance. --x, --ry and --o are written by the script in
+   index.html from scroll position, so the phone tracks the scroll and reverses
+   exactly on the way back up. The class is only added on a wide viewport with
+   motion allowed: with no JS, on a phone, or under Reduce Motion the hero stays
+   an ordinary un-sticky section with the screenshot already at rest. */
+.hero--scrub{padding:0;height:170vh}
+.hero--scrub .hero__sticky{
+  position:sticky;top:0;height:100vh;
+  display:flex;align-items:center;overflow:hidden;
+  padding:64px 0 24px;
+}
+.hero--scrub .hero__inner{width:100%}
+.hero--scrub .hero__stage{
+  transform:perspective(1400px) translate3d(calc(var(--x,0) * 1vw),0,0) rotateY(calc(var(--ry,0) * 1deg));
+  opacity:var(--o,1);
+  will-change:transform,opacity;
+}
 .call{
   margin:0;font-family:var(--display);font-weight:700;
   font-size:clamp(28px,5.4vw,44px);line-height:1;letter-spacing:-.035em;
@@ -181,15 +222,75 @@ em{font-style:normal;font-weight:600;color:var(--ink)}
   font-size:clamp(30px,6.2vw,62px);line-height:1.04;letter-spacing:-.036em;text-wrap:balance;
 }
 
-/* ---------- screenshots ---------- */
-.device{border:1px solid var(--line);background:var(--ink);border-radius:30px;padding:6px;box-shadow:0 26px 46px -26px var(--shadow)}
-.device img{width:100%;height:auto;border-radius:25px}
-.device--inline{width:min(268px,100%)}
+/* ---------- screenshots ----------
+   The phone is drawn, not photographed: a chassis rail, a black bezel and the
+   screenshot inside it. Every radius and inset is a ratio of --w, so one set of
+   rules serves the hero, the three-up grid and the inline shots on How to play.
+   The shots themselves already carry the real status bar and Dynamic Island, so
+   nothing here draws chrome — doing so would double it. */
+.device{
+  --w:292px;
+  position:relative;width:min(var(--w),100%);margin-inline:auto;
+  padding:calc(var(--w) * .031);
+  border-radius:calc(var(--w) * .161);
+  background:var(--rail);
+  box-shadow:var(--dev-shadow);
+}
+.device__bezel{
+  background:#000;padding:2px;overflow:hidden;
+  border-radius:calc(var(--w) * .131);
+}
+.device img{width:100%;height:auto;display:block;border-radius:calc(var(--w) * .124)}
+/* Side buttons. One strip a side: the left gradient paints action, volume up and
+   volume down in a single element rather than three. */
+.device::before,.device::after{content:"";position:absolute;width:3px;background:var(--btn)}
+.device::before{
+  left:-3px;top:15%;height:27%;border-radius:2px 0 0 2px;
+  background:linear-gradient(180deg,
+    transparent 0 9%, var(--btn) 9% 24%,
+    transparent 24% 37%, var(--btn) 37% 63%,
+    transparent 63% 68%, var(--btn) 68% 94%,
+    transparent 94% 100%);
+}
+.device::after{right:-3px;top:26%;height:10%;border-radius:0 2px 2px 0}
+.device--inline{--w:258px}
+.device--hero{--w:320px}
+/* Below this the column is narrower than --w, so width falls back to 100% while
+   the radii keep computing from 292 — the corners go ~7% too round. Pin --w to
+   the narrowest column instead. */
+@media (max-width:340px){ .device{--w:272px} }
+
 figcaption{margin-top:16px;font-size:15.5px;line-height:1.5;color:var(--ink2);max-width:30ch;text-wrap:pretty}
 .shots{display:grid;grid-template-columns:1fr;gap:34px}
 @media (min-width:640px){
   .shots{grid-template-columns:repeat(3,1fr);gap:28px;align-items:start}
   .shots figure:nth-child(2){transform:translateY(28px)}
+}
+/* The angled trio. 3D only from 1020px, and the phone is narrowed inside its
+   column to make room to lean: transform-origin is center bottom, so the z-tilt
+   swings the top by the FULL height, not half it — at 3deg that is ~32px of
+   horizontal reach, which is what would otherwise push the outer two past the
+   page edge and give the document a horizontal scrollbar. Below 1020px the
+   composition flattens rather than shrinking a skewed one. */
+@media (min-width:1020px){
+  .shots{perspective:1700px;padding:0 12px}
+  .shots .device{--w:264px;transform-origin:center bottom}
+  .shots figure:nth-child(1) .device{
+    transform:rotateY(14deg) rotateX(6deg) rotate(-3deg);
+    box-shadow:-24px 28px 0 var(--dev-cast), var(--dev-shadow);
+  }
+  .shots figure:nth-child(2) .device{transform:rotateX(5deg)}
+  .shots figure:nth-child(3) .device{
+    transform:rotateY(-14deg) rotateX(6deg) rotate(3deg);
+    box-shadow:-24px 28px 0 var(--dev-cast), var(--dev-shadow);
+  }
+  .shots figcaption{margin-top:26px}
+}
+/* How to play's inline shots get a gentler lean, alternating down the page. */
+@media (min-width:1020px){
+  .step{perspective:1500px}
+  .step .device--inline{--w:238px;transform-origin:center bottom;transform:rotateY(-10deg) rotate(2.5deg);box-shadow:-20px 26px 0 var(--dev-cast), var(--dev-shadow)}
+  .step:nth-of-type(even) .device--inline{transform:rotateY(10deg) rotate(-2.5deg)}
 }
 
 /* ---------- how to play: steps ---------- */
@@ -322,5 +423,10 @@ figcaption{margin-top:16px;font-size:15.5px;line-height:1.5;color:var(--ink2);ma
 @media (prefers-reduced-motion:reduce){
   *{transition:none !important;animation:none !important}
   .btn:hover{transform:none}
-  .shots figure:nth-child(2){transform:none}
+  /* The scrub is never armed here — this is the belt-and-braces for a setting
+     changed after load. The static angles stay: a rotation that never moves is
+     geometry, not motion. */
+  .hero--scrub{height:auto;padding:100px 0 84px}
+  .hero--scrub .hero__sticky{position:static;height:auto;overflow:visible;padding:0}
+  .hero__stage{transform:none !important;opacity:1 !important}
 }

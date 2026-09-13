@@ -186,9 +186,9 @@ em{font-style:normal;font-weight:600;color:var(--ink)}
 .hgrid--7>*{padding:16px 10px;display:flex;flex-direction:column;align-items:center;gap:9px}
 .hgrid--7 svg{width:24px;height:24px}
 .slotn{font-size:10px;color:var(--ink3)}
-@media (min-width:560px){ .hgrid--4{grid-template-columns:1fr 1fr} .hgrid--7{grid-template-columns:repeat(7,1fr)} }
+@media (min-width:560px){ .hgrid--4,.hgrid--5{grid-template-columns:1fr 1fr} .hgrid--7{grid-template-columns:repeat(7,1fr)} }
 @media (min-width:640px){ .hgrid--3{grid-template-columns:1fr 1fr} }
-@media (min-width:1000px){ .hgrid--3{grid-template-columns:repeat(3,1fr)} .hgrid--4{grid-template-columns:repeat(4,1fr)} }
+@media (min-width:1000px){ .hgrid--3{grid-template-columns:repeat(3,1fr)} .hgrid--4{grid-template-columns:repeat(4,1fr)} .hgrid--5{grid-template-columns:repeat(5,1fr)} }
 
 /* ---------- the scorecard ---------- */
 .card{border:1px solid var(--line);border-radius:16px;background:var(--paper);overflow:hidden}

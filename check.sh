@@ -26,23 +26,37 @@ sys.exit(0 if h==EXPECT else 1)
 PY
 [ $? -ne 0 ] && fail=1
 
-echo "2. The 24 shipped point values"
+echo "2. The 28 shipped point values"
 python3 - <<'PY'
 import io,re,glob,sys
+# 28 shipped spots, 27 distinct names: The Orange Run's Yellow Car is a separate spot
+# with its own identifier but the same name and the same 1 point, so one key covers both.
 want={"Yellow Car":1,"Beetle":2,"Camper Van":3,"Tractor":3,"Police Car":2,"Yellow Number Plate":2,
  "Sheep":1,"Cattle":1,"Horse":2,"Kangaroo":3,"Alpaca":5,"Scarecrow":5,
  "Semi Trailer":1,"Tow Truck":3,"Cement Mixer":3,"Car Carrier":4,"Fire Truck":4,"Road Train":8,
- "Roundabout":1,"Church":2,"Water Tower":3,"Silo":3,"Windmill":4,"Funny Letterbox":5}
+ "Roundabout":1,"Church":2,"Water Tower":3,"Silo":3,"Windmill":4,"Funny Letterbox":5,
+ "Pink Car":2,"Purple Car":2,"Unicorn":10}
 blob="".join(io.open(f,encoding="utf-8").read() for f in glob.glob("*.html"))
 text=re.sub(r"<[^>]*>"," ",blob); text=re.sub(r"\s+"," ",text)
 missing=[n for n in want if n not in text]
 if missing: print("  \033[31m✗\033[0m spots not found: %s" % ", ".join(sorted(missing))); sys.exit(1)
+# Every mention that has a number near it must agree, not just the first one. The
+# original checked only the first and used a 14-char window, which broke the moment a
+# spot was named somewhere with a description before its points: index.html's scorecard
+# puts 37 characters between "Unicorn" and its 10. Checking all mentions is also the
+# stronger test — a wrong value anywhere on the site now fails, not only on first use.
 wrong=[]
 for n,v in want.items():
-    seg=text[text.index(n)+len(n):][:14]
-    nums=re.findall(r"\d+",seg)
-    if not nums or int(nums[0])!=v: wrong.append("%s→%s (want %d)" % (n, nums[0] if nums else "?", v))
-print("  \033[32m✓\033[0m all 24 spots present with correct values" if not wrong
+    found=[]
+    for m in re.finditer(re.escape(n), text):
+        nums=re.findall(r"\d+", text[m.end():m.end()+60])
+        if nums: found.append(int(nums[0]))
+    if not found:
+        wrong.append("%s→no value near any mention (want %d)" % (n, v))
+    else:
+        bad=sorted({x for x in found if x!=v})
+        if bad: wrong.append("%s→%s (want %d)" % (n, "/".join(map(str,bad)), v))
+print("  \033[32m✓\033[0m 28 shipped spots, 27 distinct names, all correct" if not wrong
       else "  \033[31m✗\033[0m %s" % "; ".join(wrong))
 sys.exit(1 if wrong else 0)
 PY

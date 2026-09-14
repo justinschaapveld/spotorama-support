@@ -152,18 +152,14 @@ em{font-style:normal;font-weight:600;color:var(--ink)}
   color:var(--call);text-indent:-.38em;
 }
 .cta-row{display:flex;flex-wrap:wrap;gap:18px 26px;align-items:center;margin-top:32px}
-.btn{
-  display:inline-flex;align-items:center;gap:12px;
-  background:var(--ink);color:var(--paper);text-decoration:none;
-  padding:16px 28px 16px 24px;border-radius:13px;font-weight:600;font-size:17px;
-  transition:transform .16s ease, box-shadow .16s ease;
-}
-.btn:hover{color:var(--paper);transform:translateY(-1px);box-shadow:0 8px 22px -8px var(--shadow)}
-.btn--pending{
-  background:var(--paper);color:var(--ink2);
-  border:1px dashed var(--line);padding:16px 26px;cursor:default;
-}
-.btn .ico{width:18px;height:18px;flex:none}
+/* Apple's badge, used as supplied. The artwork may not be recoloured, reshaped or
+   have effects applied to it, so nothing here touches the image itself — the hover is a
+   1px lift on the link, which leaves the badge undistorted. aspect-ratio is the SVG's own
+   119.66407 x 40, so the box is right before the file has loaded. .cta-row's 18px/26px
+   gap is well past Apple's clear space minimum of a tenth of the badge height. */
+.badge{display:inline-block;line-height:0;transition:transform .16s ease}
+.badge:hover{transform:translateY(-1px)}
+.badge img{display:block;height:54px;width:auto;aspect-ratio:119.66407/40}
 .meta{font-size:12px;line-height:1.5;color:var(--ink3);letter-spacing:.02em}
 
 .pagehead{padding:52px 0 0}
@@ -422,7 +418,7 @@ figcaption{margin-top:16px;font-size:15.5px;line-height:1.5;color:var(--ink2);ma
 
 @media (prefers-reduced-motion:reduce){
   *{transition:none !important;animation:none !important}
-  .btn:hover{transform:none}
+  .badge:hover{transform:none}
   /* The scrub is never armed here — this is the belt-and-braces for a setting
      changed after load. The static angles stay: a rotation that never moves is
      geometry, not motion. */

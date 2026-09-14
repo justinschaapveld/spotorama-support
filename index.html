@@ -44,14 +44,20 @@
         <h1 class="h1">The car game that keeps score</h1>
         <p class="lede">Somebody spots a yellow car and calls it. Spotorama keeps the score, so everyone in the car can get on with hunting the next one.</p>
         <div class="cta-row">
-          <!-- No country segment: Apple resolves a bare /app/id… to the visitor's own
-               storefront. The listing URL recorded elsewhere is the /au/ one; this is the
-               same app, linked the way a site read from anywhere should link it. The icon
-               is a plain download arrow on purpose — Apple's mark may only be used as
-               official badge artwork, never redrawn. -->
-          <a class="btn" href="https://apps.apple.com/app/id6799803992">
-            <svg viewBox="0 0 24 24" aria-hidden="true" class="ico"><path d="M12 3v11m0 0 4-4m-4 4-4-4" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/><path d="M4 16v3a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-3" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
-            Download now
+          <!-- Apple's own badge artwork, unmodified, from their marketing toolbox. It may
+               not be redrawn, recoloured or restyled, so this is the real SVG rather than
+               something of ours that resembles it — and it is self-hosted rather than
+               hot-linked, which would put another origin in front of the front page.
+               Black on light, white on dark: Apple supplies both for exactly this.
+
+               No country segment in the link: Apple resolves a bare /app/id… to the
+               visitor's own storefront, where the /au/ form recorded as the listing URL
+               would pin an Australian one onto a site read from anywhere. -->
+          <a class="badge" href="https://apps.apple.com/app/id6799803992">
+            <picture>
+              <source srcset="img/app-store-badge-white.svg" media="(prefers-color-scheme: dark)">
+              <img src="img/app-store-badge-black.svg" alt="Download on the App Store">
+            </picture>
           </a>
           <span class="meta mono">iPhone &middot; up to seven players<br>no account, no signal needed</span>
         </div>

@@ -70,14 +70,34 @@ bare=$(grep -ho '.\{8\}Spotto[^r]' *.html 2>/dev/null \
 [ -z "$bare" ] && ok "no unquoted Spotto" || { bad "unquoted Spotto found:"; echo "$bare" | sed 's/^/      /'; }
 
 echo "4. Internal links and images resolve"
-miss=""
-for f in *.html; do
-  for t in $(grep -ho 'href="[a-z0-9./-]*\.\(html\|css\)"' "$f" 2>/dev/null | sed 's/href="//;s/"//'; \
-             grep -ho 'src="[a-z0-9./-]*\.\(png\|jpg\|svg\|webp\)"' "$f" 2>/dev/null | sed 's/src="//;s/"//'); do
-    [ -f "$t" ] || miss="$miss $f→$t"
-  done
-done
-[ -z "$miss" ] && ok "every internal href and src exists" || bad "broken:$miss"
+# Every local href, src and srcset — a #fragment must name an id in its page. The old
+# pattern matched only hrefs ending in .html or .css, so "support.html#contact", the icons
+# and the badge's srcset were skipped rather than checked.
+python3 - <<'PY'
+import glob,io,os,re,sys
+refs=re.compile(r'\b(href|src|srcset)="([^"]*)"')
+external=re.compile(r'^(?:[a-z][a-z0-9+.-]*:|//)', re.I)
+ids={}
+def page_ids(p):
+    if p not in ids: ids[p]=set(re.findall(r'\bid="([^"]+)"', io.open(p,encoding="utf-8").read()))
+    return ids[p]
+checked=0; miss=[]
+for f in sorted(glob.glob("*.html")):
+    for attr,value in refs.findall(io.open(f,encoding="utf-8").read()):
+        urls=[c.split()[0] for c in value.split(",") if c.strip()] if attr=="srcset" else [value]
+        for url in urls:
+            if not url or external.match(url): continue
+            path,_,frag=url.partition("#"); path=path.split("?")[0]; target=path or f
+            checked+=1
+            if not os.path.isfile(target): miss.append("%s→%s" % (f,url))
+            elif frag and target.endswith(".html") and frag not in page_ids(target):
+                miss.append("%s→%s (no id=\"%s\")" % (f,url,frag))
+if not checked: print("  \033[31m✗\033[0m no internal links found at all — this check is broken"); sys.exit(1)
+print(("  \033[32m✓\033[0m all %d internal href, src and srcset targets exist, fragments included" % checked)
+      if not miss else "  \033[31m✗\033[0m broken: %s" % "; ".join(miss))
+sys.exit(1 if miss else 0)
+PY
+[ $? -ne 0 ] && fail=1
 
 echo "5. Required filenames present"
 for r in privacy.html support.html; do

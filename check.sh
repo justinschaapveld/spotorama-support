@@ -112,6 +112,29 @@ for c in *.css; do
 done
 grep -l "prefers-color-scheme" *.html >/dev/null 2>&1 && ok "inline dark scheme present in HTML"
 
+echo "7. vercel.json: cleanUrls off, and the CSP allows every inline script"
+# Editing an inline script changes its hash; a stale hash in the CSP blocks the script on
+# the live site and nothing else would notice.
+python3 - <<'PY'
+import base64,glob,hashlib,io,json,re,sys
+try: cfg=json.load(io.open("vercel.json",encoding="utf-8"))
+except FileNotFoundError: print("  \033[31m✗\033[0m vercel.json missing — the site would ship with no security headers"); sys.exit(1)
+bad=[]
+if cfg.get("cleanUrls") is not False: bad.append('"cleanUrls" must be exactly false — it would 301 /privacy.html')
+csp=" ".join(h["value"] for r in cfg.get("headers",[]) for h in r["headers"] if h["key"].lower()=="content-security-policy")
+if not csp: bad.append("no Content-Security-Policy header")
+n=0
+for f in sorted(glob.glob("*.html")):
+    for body in re.findall(r'<script(?![^>]*\bsrc=)[^>]*>(.*?)</script>', io.open(f,encoding="utf-8").read(), re.S):
+        n+=1
+        h="'sha256-%s'" % base64.b64encode(hashlib.sha256(body.encode("utf-8")).digest()).decode()
+        if h not in csp: bad.append("%s has an inline script the CSP blocks — add %s" % (f,h))
+print(("  \033[32m✓\033[0m cleanUrls false; %d inline script(s), every one allowed by hash" % n) if not bad
+      else "\n".join("  \033[31m✗\033[0m "+b for b in bad))
+sys.exit(1 if bad else 0)
+PY
+[ $? -ne 0 ] && fail=1
+
 echo
 [ $fail -eq 0 ] && echo "PASS" || echo "FAIL — see ✗ above"
 exit $fail
